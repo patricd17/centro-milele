@@ -5,9 +5,9 @@ Centro Milele es una aplicación web completa para un centro multidisciplinar de
 ## 📋 Descripción del Proyecto
 
 Esta aplicación está diseñada para **Centro Milele**, un centro multidisciplinar ubicado en Málaga que ofrece servicios de:
-- **Psicología** (Silvia Cabello)
-- **Logopedia** (Patricia García Díaz) 
-- **Pedagogía Terapéutica** (Lucía Miñagorri Bandera)
+- **Psicología**
+- **Logopedia**  
+- **Pedagogía Terapéutica** 
 
 ## 🏗️ Arquitectura del Proyecto
 
