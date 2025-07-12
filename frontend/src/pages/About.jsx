@@ -12,7 +12,7 @@ const professionals = [
     role: "Logopeda",
     color: "purple",
     description:
-      "Especialista en áreas claves como la Motricidad Orofacial, especialmente en el tratamiento de dficultades relacionadas con la deglución. Apasionada por ayudar a las personas a desarrollar su máximo potencial comunicativo.",
+      "Especialista en trastornos del habla y lenguaje con enfoque en intervención temprana. Apasionada por ayudar a las personas a desarrollar su máximo potencial comunicativo.",
     image: patricia,
   },
   {
@@ -20,7 +20,7 @@ const professionals = [
     name: "Silvia Cabello Dominguez",
     role: "Psicóloga",
     color: "blue",
-    description: "Psicóloga especialista en Atención Temprana y experta en Transtorno del Espectro Autista (TEA) asi como en Parálisis cerebral en AT. Comprometida con crear espacios seguros donde las personas puedan sanar y crecer emocionalmente.",
+    description: "Psicóloga especializada en terapia familiar y de pareja. Comprometida con crear espacios seguros donde las personas puedan sanar y crecer emocionalmente.",
     image: silvia,
   },
   {
@@ -29,7 +29,7 @@ const professionals = [
     role: "Pedagogía Terapéutica",
     color: "green",
     description:
-      "Especialista en pedagogía terapéutica, especializada en escuela inclusiva y Disciplina positiva asi como en niños con Necesidades Educativas Especiales. Dedicada a crear estrategias de aprendizaje inclusivas y personalizadas.",
+      "Especialista en pedagogía terapéutica con experiencia en necesidades educativas especiales. Dedicada a crear estrategias de aprendizaje inclusivas y personalizadas.",
     image: lucia,
   },
 ]

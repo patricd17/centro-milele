@@ -49,7 +49,7 @@ export default function Contact() {
               <span className="script-font text-5xl md:text-6xl block mb-2 text-black">Contacto</span>
             </h1>
             <p className="mb-8 text-lg md:text-xl text-black/90 max-w-3xl mx-auto">
-              Estamos aquí para ayudarte. Ponte en contacto con nosotros para programar una cita o resolver cualquier
+              Estamos aquí para ayudarte. Ponte en contacto con nosotras para programar una cita o resolver cualquier
               duda que tengas sobre nuestros servicios.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Dirección</h3>
-                      <p className="text-gray-600">Calle Lope de Rueda 78 A</p>
+                      <p className="text-gray-600">Calle Ejemplo 123, Ciudad, CP 12345</p>
                     </div>
                   </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Teléfono</h3>
-                      <p className="text-gray-600">+34 614 438 477</p>
+                      <p className="text-gray-600">+34 123 456 789</p>
                     </div>
                   </div>
 
@@ -94,7 +94,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Email</h3>
-                      <p className="text-gray-600">centromilele@gmail.com</p>
+                      <p className="text-gray-600">info@milelecentro.com</p>
                     </div>
                   </div>
 
@@ -129,7 +129,7 @@ export default function Contact() {
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                    <p className="text-green-800">¡Mensaje enviado correctamente! Nos pondremos en contacto contigo lo antes posible.</p>
+                    <p className="text-green-800">¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.</p>
                   </div>
                 )}
 

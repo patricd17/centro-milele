@@ -10,66 +10,64 @@ const professionals = {
     name: "Patricia García Díaz",
     role: "Logopeda",
     color: "purple",
-    license: "29/2333",
+    license: "L-28/46758",
     image: patricia,
     specialties: [
       "Trastornos del habla y lenguaje",
-      "Atención temprana",
+      "Intervención temprana",
       "Dificultades de deglución",
       "Terapia vocal",
-      "Transtorno por Déficit de Atención e Hiperactividad (TDAH)",
+      "Comunicación alternativa"
     ],
     approach:
-      "Mi enfoque se basa en la atención personalizada y el trabajo multidisciplinar, colaborando estrechamente con otros profesionales para ofrecer un tratamiento que se adapte a las necesidades específicas de cada paciente. Mi objetivo es ayudar a que cada persona supere sus dificultades, desarrollando sus habilidades de comunicación y favoreciendo su bienestar.",
+      "Mi enfoque se centra en la intervención temprana y personalizada, utilizando técnicas innovadoras que respetan el ritmo de cada persona. Creo firmemente en el poder de la comunicación como herramienta de conexión y desarrollo personal.",
     why: "Decidí ser logopeda porque desde pequeña me fascinaba observar cómo las personas se comunican de maneras únicas y especiales. Quería formar parte de ese proceso tan importante y ayudar a quienes tienen dificultades para expresarse, porque creo que todos merecen ser escuchados y comprendidos.",
     passion:
-      "Lo que más me emociona de mi trabajo es ver esa primera palabra clara, esa frase completa o simplemente la sonrisa de satisfacción cuando alguien logra comunicar lo que siente. Cada avance, por pequeño que parezca, es una gran victoria que celebramos juntos.Además, me encanta poder trabajar en equipo con otros profesionales del centro. Creo firmemente que el trabajo multidisciplinar es esencial para abordar cualquier dificultad de manera integral y eficaz.",
+      "Lo que más me emociona de mi trabajo es ver esa primera palabra clara, esa frase completa o simplemente la sonrisa de satisfacción cuando alguien logra comunicar lo que siente. Cada avance, por pequeño que parezca, es una gran victoria que celebramos juntos.",
     hobbies:
-      "En mi tiempo libre, disfruto de estar con mi familia, ir a la playa a conectar con la naturaleza, andar sintiendo la brisa del mar, la fotografía, pintar, los animales.. Siempre intento introducir en mi día a día algo de lo que me hace desconectar de la rutina y conectar conmigo misma. Esto me ayuda a mantener un equilibrio, ya que considero que tanto la mente como el cuerpo necesitan cuidado. Y, por supuesto, me encanta seguir formándome, ya que la logopedia es un campo que siempre está en constante evolución.",
+      "Fuera del trabajo disfruto muchísimo de la música - toco el piano y canto en un coro local. También me encanta la naturaleza: hago senderismo los fines de semana y tengo un pequeño huerto en casa donde cultivo mis propias hierbas aromáticas.",
   },
   silvia: {
-    name: "Silvia Cabello Domínguez",
-    role: "Psicóloga Sanitaria",
+    name: "Silvia Cabello",
+    role: "Psicóloga",
     color: "blue",
-    license: "AO11742",
+    license: "P-28/32156",
     image: silvia,
     specialties: [
-      "Atención temprana (AT)",
-      "Transtorno del Espectro Autista (TEA)",
-      "Parálisis cerebral en AT",
-      "Programa avanzado en Apego",
-      "Psicología Perinatal",
-      "Musicoterapia",
+      "Terapia familiar y de pareja",
+      "Ansiedad y depresión",
+      "Trastornos del estado de ánimo",
+      "Trauma y estrés postraumático",
+      "Desarrollo personal"
     ],
     approach:
-      "Siempre he sido una niña a la que le ha gustado ayudar y acompañar a los demás, tanto en sus desafíos como en sus fortalezas. Recuerdo con especial cariño a una niña con necesidades que estaba en mi clase de primaria. Durante los años que compartimos, aprendimos mucho la una de la otra. Sin darnos cuenta, ella me enseñó cariño, paciencia, comprensión, empatía y un sinfín de cosas más. Con el paso de los cursos, las materias se complicaban y tuve que dedicar mucho esfuerzo para superarlas con éxito. De hecho, no sabía ni qué estudiar, pero sí tenía claro que no haría selectividad, ya que jamás me veía estudiando una carrera. Gracias a una persona muy especial que me llevó “a rastras” a hacer la selectividad y a elegir varias opciones (economía, psicología, trabajo social… sí, economía no tiene sentido ahí, lo sé, jajaja), terminé entrando en psicología. Casi al final de la carrera, me enamoré de la Atención Temprana gracias a la mujer que la impartía. Me hizo reencontrarme con esos sentimientos de cariño, paciencia y empatía que tuve en primaria. Tras varios años trabajando, pude hacer el Máster en Atención Temprana, donde aprendí una barbaridad en las prácticas gracias a tutoras maravillosas. Fue ahí donde me enamoré del TEA, lo que me llevó a especializarme aún más en ello.",
-
+      "Mi práctica se basa en crear un espacio seguro y empático donde las personas puedan explorar sus emociones libremente. Combino diferentes enfoques terapéuticos adaptándome a las necesidades únicas de cada persona, siempre desde el respeto y la comprensión.",
     why: "Elegí la psicología porque siempre me ha conmovido profundamente la capacidad humana de sanar y transformarse. Desde adolescente sentía una llamada natural hacia ayudar a otros, y descubrí que la terapia es una de las formas más hermosas de acompañar a las personas en sus momentos más vulnerables.",
     passion:
-      "Acompañar a las familias en cada uno de los progresos de los peques, disfrutar las sesiones, sacar la niña que llevo dentro, compartir esa inocencia y esa alegría. Por supuesto, no todos son buenos momentos, hay muchos muy duros pero son esos los que me hacen sacar fuerzas para continuar luchando por todos ellos.",
+      "Mi mayor satisfacción viene de presenciar esos momentos de 'iluminación' cuando mis pacientes descubren nuevas perspectivas sobre sí mismos. Me emociona profundamente ser testigo de cómo las personas recuperan su fortaleza interior y encuentran nuevas formas de relacionarse consigo mismas y con otros.",
     hobbies:
-      "Lo que más disfruto es pasar tiempo con mis animales, son una parte esencial en mi día a día, me recargan de energía en cuanto los veo corriendo hacia mí al llegar a casa. También me apasiona comer, y ¡qué mejor compañía que la de mi pareja, familia y amigos para hacerlo! Disfrutar de ello y la naturaleza, ya sea playa o montaña, me encanta. Aquí donde me veis, fui una niña tímida, introvertida y con poca confianza en mí misma (algo que sigo trabajando día a día). Hoy soy quien soy gracias a toda mi trayectoria y a unas personitas muy especiales, a quienes siempre estaré eternamente agradecida. ¿Te unes a esta gran aventura llamada Milele?",
+      "Soy una apasionada de la lectura, especialmente de novelas psicológicas y libros de crecimiento personal. También practico yoga y meditación diariamente, actividades que me ayudan a mantener mi equilibrio emocional. Los fines de semana disfruto cocinando platos nuevos y compartiendo comidas con amigos y familia.",
   },
   lucia: {
     name: "Lucía Miñagorri Bandera",
     role: "Pedagogía Terapéutica",
     color: "green",
-    license: "4079",
+    license: "PT-28/89234",
     image: lucia,
     specialties: [
       "Necesidades educativas especiales",
-      "Dificultades específicas de Aprendizaje",
-      "TDAH",
-      "Problemas graves de conducta",
-      
+      "Trastornos del aprendizaje",
+      "TDAH y funciones ejecutivas",
+      "Estimulación cognitiva",
+      "Adaptaciones curriculares"
     ],
     approach:
-      "Se centra en la atención individualizada de mi alumnado, creando una red de apoyo entre los diferentes profesionales y las familias, con el objetivo de abordar de manera integral las necesidades específicas de cada niño y niña, y lograr así un desarrollo óptimo en distintas áreas. Durante las intervenciones, dedicamos el tiempo a construir el aprendizaje sobre tres pilares que, para mí, son fundamentales: la conexión con el alumnado, permitirnos ser con todas nuestras emociones y aprender a través del movimiento. Todo ello se lleva a cabo mediante metodologías adaptadas a cada niño y niña, fomentando así su autonomía, confianza en sí mismos y motivación por el aprendizaje. Como maestra, defiendo la pedagogía del amor, para que todo mi alumnado se sienta comprendido, valorado y, sobre todo, capaz de lograr todos sus objetivos.¿Y por qué maestra? Ser maestra no estaba en mis planes. De hecho, siempre fui considerada una estudiante de 'fracaso escolar'. Pero creo que ahí está la clave de todo. Por eso me he convertido en la maestra que necesité cuando era pequeña: alguien que sabe mirar más allá de una dificultad de aprendizaje, que prioriza las emociones y se preocupa por acompañar y hacer el camino más sencillo.", 
-    why: "Decidí estudiar el Grado Superior de Integración Social, realizando mis prácticas en el Aula Hospitalaria del Materno Infantil de Málaga, atendiendo a cuatro familias. No sé si ellos aún me recuerdan, pero para mí fueron los verdaderos protagonistas de mi historia: Jose, Alejandra, Jesús y Kevin. Todos padecían enfermedades raras y severas. Pero uno de ellos, Jose, me permitió lo más importante: acompañarle durante sus últimos años. Él me enseñó el valor del tiempo, el arte de acompañar, a vivir el presente, a respetar los ritmos de cada alumno, el poder de ser diferentes y luchar por los sueños... Me llenó la vida de colores. Él fue el motivo por el que quise ser maestra de Pedagogía Terapéutica.",
+      "Mi metodología se basa en la pedagogía inclusiva y personalizada, diseñando estrategias únicas para cada estudiante. Trabajo desde las fortalezas de cada persona, creando puentes hacia el aprendizaje que respeten sus ritmos y estilos particulares.",
+    why: "Mi vocación por la pedagogía terapéutica surgió durante mis prácticas universitarias, cuando trabajé con niños con necesidades especiales. Quedé impactada por su capacidad de superación y por cómo pequeños ajustes en el aprendizaje podían abrir mundos completamente nuevos para ellos.",
     passion:
-      "Cada familia y cada historia me han llevado hasta Milele. Considero que parte de mi personalidad alegre y paciente se la debo a ellos, pues me han enseñado a valorar la importancia de cada logro y cada pequeño avance que conseguimos juntos. Esto es lo que más valoro de mi trabajo: la importancia de ser un equipo con mis compañeras y las familias, además de continuar creciendo y formándome para ofrecer un servicio lo más integral posible y mejorar la calidad de vida de mis niños y niñas.",
+      "Lo que más me llena de energía es ese momento mágico cuando un estudiante que parecía 'bloqueado' de repente encuentra su camino hacia el aprendizaje. Me fascina descubrir las múltiples formas de inteligencia que cada persona posee y ayudarles a desarrollar todo su potencial único.",
     hobbies:
-      "Disfruto del equilibrio que me brinda pasar tiempo conmigo misma, reconectar y recargar energías. Valoro profundamente cada momento con mis seres queridos, ya que mi familia y amigos son una fuente constante de inspiración y alegría. Me apasionan la música, el mar, el deporte, la montaña y, por supuesto, la compañía de mis gatos.",
+      "Soy muy creativa en mi tiempo libre: pinto acuarelas, hago manualidades y diseño materiales educativos personalizados. También me encanta viajar y conocer diferentes culturas, lo que enriquece mi perspectiva pedagógica. Practico pilates y salgo a correr por las mañanas para mantenerme activa.",
   },
 }
 
