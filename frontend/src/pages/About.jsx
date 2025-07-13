@@ -17,7 +17,7 @@ const professionals = [
   },
   {
     id: "silvia",
-    name: "Silvia Cabello Dominguez",
+    name: "Silvia Cabello Domínguez",
     role: "Psicóloga",
     color: "blue",
     description: "Psicóloga especialista en Atención Temprana y experta en Transtorno del Espectro Autista (TEA) asi como en Parálisis cerebral en AT. Comprometida con crear espacios seguros donde las personas puedan sanar y crecer emocionalmente.",
@@ -26,7 +26,7 @@ const professionals = [
   {
     id: "lucia",
     name: "Lucía Miñagorri Bandera",
-    role: "Pedagogía Terapéutica",
+    role: "Pedagoga Terapéutica",
     color: "green",
     description:
       "Especialista en pedagogía terapéutica, especializada en escuela inclusiva y Disciplina positiva asi como en niños con Necesidades Educativas Especiales. Dedicada a crear estrategias de aprendizaje inclusivas y personalizadas.",
