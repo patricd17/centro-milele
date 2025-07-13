@@ -52,7 +52,7 @@ const professionals = {
   },
   lucia: {
     name: "Lucía Miñagorri Bandera",
-    role: "Pedagogía Terapéutica",
+    role: "Pedagoga Terapéutica",
     color: "green",
     license: "4079",
     image: lucia,
