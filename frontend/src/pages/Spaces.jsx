@@ -27,7 +27,7 @@ const galleryImages = [
     description: "En sala mariposa creemos que cada proceso es como una metamorfosis: íntimo y lleno de posibilidades. Ofrecemos un lugar seguro en el que poder desplegar sus alas.",
   },
   {
-    src: Salatulipán,
+    src: Salatulipan,
     title: "Sala Tulipán: Logopedia",
     description: "Así como cada tulipán necesita un espacio para crecer, cada persona necesita un lugar para comunicarse, expresarse y desarrollarse.",
   },
