@@ -74,7 +74,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Dirección</h3>
-                      <p className="text-gray-600">Calle Ejemplo 123, Ciudad, CP 12345</p>
+                      <p className="text-gray-600">Calle Lope de Rueda, 78a</p>
                     </div>
                   </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Teléfono</h3>
-                      <p className="text-gray-600">+34 123 456 789</p>
+                      <p className="text-gray-600">+34 614 438 477</p>
                     </div>
                   </div>
 
@@ -94,7 +94,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Email</h3>
-                      <p className="text-gray-600">info@milelecentro.com</p>
+                      <p className="text-gray-600">centromilele@gmail.com</p>
                     </div>
                   </div>
 
@@ -105,9 +105,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Horario</h3>
                       <div className="text-gray-600">
-                        <p>Lunes a Viernes: 9:00 - 20:00</p>
-                        <p>Sábados: 10:00 - 14:00</p>
-                        <p>Domingos: Cerrado</p>
+                        <p>Lunes a Viernes: 9:00 - 14:00 y 15:00 - 20:30</p>
+                        <p>Sábados y Domingos cerrados</p>
                       </div>
                     </div>
                   </div>
@@ -129,7 +128,7 @@ export default function Contact() {
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                    <p className="text-green-800">¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.</p>
+                    <p className="text-green-800">¡Mensaje enviado correctamente! El equipo de Milele contactará contigo lo antes posible.</p>
                   </div>
                 )}
 
