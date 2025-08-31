@@ -2,63 +2,45 @@ import { useState } from "react"
 import { MapPin, ChevronLeft, ChevronRight, Home, Sparkles, ArrowRight, Clock, Users, Shield, Heart } from "lucide-react"
 import ImageCarousel from "../components/ImageCarousel"
 import ImageModal from "../components/ImageModal"
-import salonColores from "../assets/images/salon-colores.webp"
-import plano from "../assets/images/plano.webp"
-import juguetes from "../assets/images/juguetes.webp"
-import corredor from "../assets/images/corredor.webp"
-import microondas from "../assets/images/microondas.webp"
-import mueble from "../assets/images/mueble.webp"
-import puerta from "../assets/images/puerta.webp"
-import sala from "../assets/images/sala.webp"
-import wc from "../assets/images/wc.webp"
+import recepcion from "../assets/images/recepcion.webp"
+import Salaarcoiris from "../assets/images/Salaarcoiris.webp"
+import Salamariposa from "../assets/images/Salamariposa.webp"
+import Salatulipan from "../assets/images/Salatulipan.webp"
+import Salauniverso from "../assets/images/Salauniverso.webp"
+import baño from "../assets/images/baño.webp"
 
 // Galería de imágenes de nuestras instalaciones
 const galleryImages = [
   {
-    src: salonColores,
-    title: "Sala de Colores",
-    description: "Espacio vibrante y acogedor para terapia infantil",
+    src: recepcion,
+    title: "Recepción",
+    description: "Os damos la bienvenida en una recepción pensada para que el primer paso hacia el bienestar sea agradable y sereno. Con luz suave, colores armónicos y un ambiente relajante, diseñada para que puedas desconectar y prepararte para la sesión.",
   },
   {
-    src: sala,
-    title: "Sala de Terapia",
-    description: "Ambiente tranquilo para sesiones individuales",
+    src: Salaarcoiris,
+    title: "Sala Arco Iris: Pedagogía Terapéutica",
+    description: "Como un arcoiris cada niño brilla con sus propios colores y la pedagogía terapéuta le ayuda a brillar en todo su esplendor.",
   },
   {
-    src: juguetes,
-    title: "Área de Juegos",
-    description: "Materiales lúdicos y terapéuticos especializados",
+    src: Salamariposa,
+    title: "Sala Mariposa: Psicología",
+    description: "En sala mariposa creemos que cada proceso es como una metamorfosis: íntimo y lleno de posibilidades. Ofrecemos un lugar seguro en el que poder desplegar sus alas.",
   },
   {
-    src: corredor,
-    title: "Corredor Principal",
-    description: "Amplios pasillos con iluminación natural",
+    src: Salatulipán,
+    title: "Sala Tulipán: Logopedia",
+    description: "Así como cada tulipán necesita un espacio para crecer, cada persona necesita un lugar para comunicarse, expresarse y desarrollarse.",
   },
   {
-    src: mueble,
-    title: "Mobiliario Especializado",
-    description: "Equipamiento adaptado para todas las edades",
+    src: Salauniverso,
+    title: "Sala Universo",
+    description: "Donde la imaginación se expande, el juego se convierte en descubrimiento y cada momento es una nueva constelación en su propio cielo. Un lugar pensado para el juego, el movimiento, la comunicación, el aprendizaje, las emociones y la regulación sensorial.",
   },
   {
-    src: puerta,
-    title: "Acceso Principal",
-    description: "Entrada acogedora y accesible",
-  },
-  {
-    src: microondas,
-    title: "Área de Descanso",
-    description: "Espacio para familias y cuidadores",
-  },
-  {
-    src: wc,
-    title: "Servicios",
-    description: "Instalaciones adaptadas y cómodas",
-  },
-  {
-    src: plano,
-    title: "Distribución del Centro",
-    description: "Plano general de nuestras instalaciones",
-  },
+    src: baño,
+    title: "Baño",   
+    description: "Contamos con un baño unisex adaptado para personas con movilidad reducida, diseñado para ofrecer comodidad, seguridad y accesibilidad a todos nuestros visitantes.",
+  }
 ]
 
 export default function Spaces() {
