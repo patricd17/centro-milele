@@ -99,17 +99,18 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-green/10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-green to-milele-cyan text-white mr-4">
-                      <Clock className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 font-serif mb-1">Horario</h3>
-                      <div className="text-gray-600">
-                        <p>Lunes a Viernes: 9:00 - 14:00 y 15:00 - 20:30</p>
-                        <p>Sábados y Domingos cerrados</p>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-green to-milele-cyan text-white mr-4">
+                          <Clock className="h-6 w-6" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 font-serif mb-1">Horario</h3>
+                          <div className="text-gray-600">
+                            <p>Lunes a Viernes: Mañanas bajo cita previa</p>
+                            <p>Tardes: 16:00 - 20:00</p>
+                            <p>Sábados y Domingos cerrados</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
