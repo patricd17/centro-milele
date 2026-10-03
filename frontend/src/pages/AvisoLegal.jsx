@@ -25,7 +25,6 @@ export default function AvisoLegal() {
         <li>
           E-mail: <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
         </li>
-        <li>Datos registrales: {COMPANY.registry}</li>
       </ul>
 
       <h2>2. Derechos de propiedad intelectual e industrial</h2>
