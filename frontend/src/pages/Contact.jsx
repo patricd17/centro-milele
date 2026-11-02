@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
+import { Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
 import MapConsent from "../components/MapConsent"
+import DondeEstamos from "../components/DondeEstamos"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -64,79 +65,11 @@ export default function Contact() {
       <section className="py-16 bg-milele-gradient-soft">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="mb-8 text-3xl font-semibold font-serif text-gray-900">
-                  Información de <span className="gradient-text">Contacto</span>
-                </h2>
-
-                <div className="space-y-6">
-                  <div className="flex items-start p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-green/10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-green to-milele-cyan text-white mr-4">
-                      <MapPin className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 font-serif mb-1">Dirección</h3>
-                      <p className="text-gray-600">Calle Lope de Rueda, 78a</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-cyan/10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-cyan to-milele-pink text-white mr-4">
-                      <Phone className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 font-serif mb-1">Teléfono</h3>
-                      <p>
-                        <a href="tel:+34614438477" className="text-gray-600 hover:text-milele-pink-dark transition-colors">
-                          +34 614 438 477
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-pink/10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-green text-white mr-4">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 font-serif mb-1">Email</h3>
-                      <p>
-                        <a
-                          href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
-                          className="text-gray-600 hover:text-milele-pink-dark transition-colors"
-                        >
-                          centromilele@gmail.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-green/10">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-green to-milele-cyan text-white mr-4">
-                          <Clock className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 font-serif mb-1">Horario</h3>
-                          <div className="text-gray-600">
-                            <p>Lunes a Viernes: Mañanas bajo cita previa</p>
-                            <p>Tardes: 16:00 - 20:00</p>
-                            <p>Sábados y Domingos cerrados</p>
-                          </div>
-                        </div>
-                      </div>
-
-                  <div className="p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-cyan/10">
-                    <h3 className="font-semibold text-gray-900 font-serif mb-4">Dónde estamos</h3>
-                    <MapConsent className="h-72" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Dónde estamos: dirección, horario, teléfono y correo en un único bloque */}
+            <DondeEstamos variant="card" className="order-2 lg:order-1" />
 
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
+            <div className="order-1 lg:order-2 bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
               <div className="flex items-center mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-green text-white mr-4">
                   <MessageCircle className="h-6 w-6" />
@@ -259,6 +192,12 @@ export default function Contact() {
                 </div>
               </form>
             </div>
+          </div>
+
+          {/* Mapa (se carga solo al pulsar «Ver mapa aquí») */}
+          <div className="mt-12 rounded-2xl border border-milele-cyan/10 bg-white p-6 shadow-lg milele-shadow md:p-8">
+            <h2 className="mb-4 text-2xl font-semibold font-serif text-gray-900">Encuéntranos en el mapa</h2>
+            <MapConsent className="h-80" />
           </div>
         </div>
       </section>
