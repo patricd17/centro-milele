@@ -11,6 +11,7 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
+    website: "", // campo trampa (honeypot): las personas no lo ven; los bots suelen rellenarlo
   })
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -34,6 +35,7 @@ export default function Contact() {
         email: "",
         phone: "",
         message: "",
+        website: "",
       })
     } catch (error) {
       setSubmitStatus('error')
@@ -101,6 +103,7 @@ export default function Contact() {
                     type="text"
                     id="name"
                     name="name"
+                    maxLength={100}
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -117,6 +120,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
+                    maxLength={254}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -133,6 +137,7 @@ export default function Contact() {
                     type="tel"
                     id="phone"
                     name="phone"
+                    maxLength={30}
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-milele-cyan-dark focus:outline-none focus:ring-2 focus:ring-milele-cyan-dark/20 transition-colors"
@@ -146,6 +151,7 @@ export default function Contact() {
                   <textarea
                     id="message"
                     name="message"
+                    maxLength={3000}
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -153,6 +159,25 @@ export default function Contact() {
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-milele-cyan-dark focus:outline-none focus:ring-2 focus:ring-milele-cyan-dark/20 transition-colors resize-none"
                     placeholder="Cuéntanos cómo podemos ayudarte..."
                   ></textarea>
+                </div>
+
+                <p className="-mt-3 text-xs text-gray-500">
+                  Por favor, no incluyas datos de salud ni informes en este mensaje: te los pediremos de forma segura
+                  al concertar la cita. Si escribes en nombre de un menor, hazlo como madre, padre o tutor.
+                </p>
+
+                {/* Campo trampa: oculto para las personas */}
+                <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                  <label htmlFor="website">No rellenar este campo</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={handleChange}
+                  />
                 </div>
 
                 <div className="space-y-3 rounded-xl bg-gray-50 p-4 text-xs text-gray-600">
