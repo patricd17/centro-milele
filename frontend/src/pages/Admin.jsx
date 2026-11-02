@@ -103,7 +103,7 @@ function WebPreview({ title, status, notice }) {
         <StatusBarView status={status} notice={notice} />
         <div className="flex items-center justify-between border-t border-gray-100 px-6 py-3">
           <img src={logoMilele} alt="" className="h-12 w-12 rounded-full" />
-          <div className="flex gap-6 text-sm text-gray-700 font-serif">
+          <div className="hidden gap-6 text-sm text-gray-700 font-serif sm:flex">
             <span>Inicio</span>
             <span>Quienes Somos</span>
             <span>Nuestros Espacios</span>
@@ -213,7 +213,7 @@ function ClosuresPanel() {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
-      <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <section className="min-w-0 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
         <h1 className="mb-1 text-2xl font-semibold font-serif text-gray-900">Días de cierre</h1>
         <p className="mb-6 text-sm text-gray-600">
           Marca los días que el centro no abre. La web avisa unos días antes y ese día pone «Cerrado».
@@ -288,7 +288,7 @@ function ClosuresPanel() {
         </div>
       </section>
 
-      <aside className="space-y-6">
+      <aside className="min-w-0 space-y-6">
         <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
           {!start ? (
             <>
@@ -319,7 +319,7 @@ function ClosuresPanel() {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Vacaciones, formación, imprevisto…"
-                className="mb-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm focus:border-milele-cyan-dark focus:outline-none focus:ring-2 focus:ring-milele-cyan-dark/20"
+                className="mb-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-base focus:border-milele-cyan-dark focus:outline-none focus:ring-2 focus:ring-milele-cyan-dark/20"
               />
               <p className="mb-4 text-xs text-gray-500">Opcional. Se muestra en la web a todo el mundo: no pongas datos personales.</p>
 
@@ -365,9 +365,9 @@ function ClosuresPanel() {
             <ul className="space-y-3">
               {closures.map((c) => (
                 <li key={c.id} className="flex items-start justify-between gap-3 text-sm">
-                  <span>
+                  <span className="min-w-0">
                     <span className="font-medium text-gray-900">{rangeText(c.start_date, c.end_date)}</span>
-                    {c.reason && <span className="text-gray-600"> · {c.reason}</span>}
+                    {c.reason && <span className="text-gray-600 [overflow-wrap:anywhere]"> · {c.reason}</span>}
                   </span>
                   <button type="button" onClick={() => remove(c)} className="flex-shrink-0 text-red-700 underline cursor-pointer">
                     Quitar

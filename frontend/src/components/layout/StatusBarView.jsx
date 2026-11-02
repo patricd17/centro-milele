@@ -19,7 +19,7 @@ export default function StatusBarView({ status, notice }) {
             <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${DOT_COLORS[status.state]}`} />
           </span>
           <span className="min-w-0 leading-snug">
-            <span className="font-semibold">{status.label}</span>
+            <span className="font-semibold [overflow-wrap:anywhere]">{status.label}</span>
             {status.detail && (
               <span className="block text-xs text-gray-500 sm:inline sm:text-sm">
                 <span className="hidden sm:inline"> · </span>
@@ -47,7 +47,7 @@ export default function StatusBarView({ status, notice }) {
         <div className="border-t border-amber-200 bg-amber-50 text-amber-900">
           <p className="container mx-auto flex items-start gap-2 px-4 py-2 text-[13px] leading-snug sm:text-sm">
             <Info className="mt-0.5 h-4 w-4 flex-shrink-0" aria-hidden="true" />
-            <span>
+            <span className="[overflow-wrap:anywhere]">
               El centro permanece cerrado {rangeText(notice.start_date, notice.end_date)}
               {notice.reason ? ` (${notice.reason})` : ""}.
             </span>
