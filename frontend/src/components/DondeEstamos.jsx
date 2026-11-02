@@ -1,6 +1,18 @@
 import { Navigation } from "lucide-react"
-import fachada from "../assets/images/fachada-milele.webp"
+import fachadaEsquina from "../assets/images/fachada-milele.webp"
+import fachadaFrontal from "../assets/images/fachada-frontal.webp"
 import instagramLogo from "../assets/images/instagram.webp"
+
+const PHOTOS = {
+  esquina: {
+    src: fachadaEsquina,
+    alt: "Fachada del centro Milele en Puerto de la Torre, Málaga",
+  },
+  frontal: {
+    src: fachadaFrontal,
+    alt: "Entrada del centro Milele con el escaparate de las siluetas de los niños, en Puerto de la Torre, Málaga",
+  },
+}
 
 const MAPS_PLACE = "https://www.google.com/maps/search/?api=1&query=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
 const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
@@ -11,9 +23,11 @@ const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lop
  *
  * variant "plain": sin caja, foto y datos en dos columnas (pie de la página de inicio).
  * variant "card": en una tarjeta, con la foto encima de los datos (página de contacto).
+ * photo: "esquina" (vista de la esquina, en inicio) o "frontal" (la entrada, en contacto).
  */
-export default function DondeEstamos({ variant = "plain", className = "" }) {
+export default function DondeEstamos({ variant = "plain", photo = "esquina", className = "" }) {
   const card = variant === "card"
+  const image = PHOTOS[photo]
   const Heading = card ? "h2" : "h3"
 
   return (
@@ -27,10 +41,10 @@ export default function DondeEstamos({ variant = "plain", className = "" }) {
       </Heading>
       <div className={`grid gap-6 ${card ? "" : "md:grid-cols-2"}`}>
         <img
-          src={fachada}
-          alt="Fachada del centro Milele en Puerto de la Torre, Málaga"
-          width="680"
-          height="510"
+          src={image.src}
+          alt={image.alt}
+          width="640"
+          height="480"
           loading="lazy"
           className="aspect-[4/3] w-full rounded-lg object-cover"
         />

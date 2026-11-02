@@ -66,7 +66,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Dónde estamos: dirección, horario, teléfono y correo en un único bloque */}
-            <DondeEstamos variant="card" className="order-2 lg:order-1" />
+            <DondeEstamos variant="card" photo="frontal" className="order-2 lg:order-1" />
 
             {/* Contact Form */}
             <div className="order-1 lg:order-2 bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
