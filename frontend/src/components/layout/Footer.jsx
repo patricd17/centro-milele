@@ -1,15 +1,18 @@
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 import { MapPin, Phone, Mail, Instagram } from "lucide-react"
 import { useCookieConsent } from "../../context/cookieConsentContext"
+import MapConsent from "../MapConsent"
 
 export default function Footer() {
-  const { thirdPartyAllowed, acceptAll, openSettings } = useCookieConsent()
+  const { openSettings } = useCookieConsent()
+  const { pathname } = useLocation()
+  const showMap = pathname !== "/contact"
 
   return (
     <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-milele-gradient opacity-5"></div>
       <div className="container mx-auto px-4 relative">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className={`grid gap-8 ${showMap ? "lg:grid-cols-2" : ""}`}>
           {/* Left Column - Contact and Links */}
           <div className="grid gap-8 md:grid-cols-2">
             <div>
@@ -77,52 +80,13 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </div>          {/* Right Column - Map */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Ubicación</h3>
-            <div className="h-64 w-full overflow-hidden rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light border border-milele-green/20">
-              {thirdPartyAllowed ? (
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.3569234003569!2d-4.479799630349089!3d36.73630387302376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f72b44da7cc3%3A0x1247ea5988f3f400!2sC.%20Lope%20de%20Rueda%2C%2078%2C%20Puerto%20de%20la%20Torre%2C%2029190%20M%C3%A1laga%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sco!4v1748354275548!5m2!1ses-419!2sco"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                  title="Ubicación de Milele Centro Multidisciplinar"
-                />
-              ) : (
-                <div className="h-full w-full flex items-center justify-center rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light">
-                  <div className="text-center p-6">
-                    <MapPin className="h-8 w-8 text-gray-900 mx-auto mb-3" />
-                    <p className="text-gray-900 font-semibold">Calle Lope de Rueda, 78a, 29190 Málaga</p>
-                    <p className="text-gray-700 text-xs mt-2 max-w-xs mx-auto">
-                      El mapa es de Google: al cargarlo, Google recibe tu dirección IP y puede guardar cookies.
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                      <button
-                        type="button"
-                        onClick={acceptAll}
-                        className="rounded-full border-2 border-gray-900 px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-white/60 transition-colors cursor-pointer"
-                      >
-                        Ver mapa aquí
-                      </button>
-                      <a
-                        href="https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-milele-gradient px-4 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow"
-                      >
-                        Abrir en Google Maps
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
+          </div>          {/* Right Column - Map (en /contact el mapa está dentro de la sección de contacto) */}
+          {showMap && (
+            <div>
+              <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Ubicación</h3>
+              <MapConsent />
             </div>
-          </div>
+          )}
         </div>
 
         <div className="mt-8 border-t border-milele-green/20 py-6 text-center text-sm text-gray-600">
