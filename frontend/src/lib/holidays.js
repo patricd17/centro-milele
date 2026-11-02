@@ -1,6 +1,7 @@
 // Festivos en los que el centro permanece cerrado (nacionales y de Andalucía).
-// Si en algún año un festivo se traslada, o hay festivos locales de Málaga,
-// se añaden aquí con el formato "AAAA-MM-DD".
+// Cualquier otro día de cierre (vacaciones, puentes...) se añade aquí con el
+// formato "AAAA-MM-DD". Los festivos fijos que caen en domingo ya se trasladan
+// solos al lunes (ver holidayName).
 const EXTRA_HOLIDAYS = {
   // "2026-08-19": "Festivo local de Málaga",
 }
@@ -16,6 +17,13 @@ const FIXED_HOLIDAYS = {
   "12-06": "Día de la Constitución",
   "12-08": "Inmaculada Concepción",
   "12-25": "Navidad",
+}
+
+// Festivos locales de Málaga capital. No se trasladan si caen en domingo.
+// El Ayuntamiento los fija cada año en el BOJA: si cambian, se actualizan aquí.
+const LOCAL_HOLIDAYS = {
+  "08-19": "Feria de Málaga",
+  "09-08": "Virgen de la Victoria",
 }
 
 // Domingo de Pascua (algoritmo de Meeus/Jones/Butcher).
@@ -44,6 +52,7 @@ function key(date) {
 }
 
 // Devuelve el nombre del festivo o null si es un día laborable normal.
+// Un festivo fijo que cae en domingo se traslada al lunes siguiente.
 export function holidayName(year, month, day) {
   const mm = String(month).padStart(2, "0")
   const dd = String(day).padStart(2, "0")
@@ -57,5 +66,16 @@ export function holidayName(year, month, day) {
   if (current === key(holyThursday)) return "Jueves Santo"
   if (current === key(goodFriday)) return "Viernes Santo"
 
-  return FIXED_HOLIDAYS[current] ?? null
+  if (FIXED_HOLIDAYS[current]) return FIXED_HOLIDAYS[current]
+  if (LOCAL_HOLIDAYS[current]) return `${LOCAL_HOLIDAYS[current]} (festivo local)`
+
+  // Lunes siguiente a un festivo fijo que cayó en domingo.
+  const date = new Date(Date.UTC(year, month - 1, day))
+  if (date.getUTCDay() === 1) {
+    const sunday = new Date(date.getTime() - 86400000)
+    const moved = FIXED_HOLIDAYS[key(sunday)]
+    if (moved) return `${moved} (trasladado)`
+  }
+
+  return null
 }
