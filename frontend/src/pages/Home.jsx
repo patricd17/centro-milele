@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { ArrowRight, Heart, Brain, Users, Star, Sparkles, ClipboardList, UserCheck, Target, CheckCircle, MessageSquare, BookOpen, Shield, TrendingUp, HandHeart, GraduationCap } from "lucide-react"
-import tulipanes from "../assets/images/tulipanes.webp"
+import HeroVideo from "../components/HeroVideo"
 
 export default function Home() {
   return (
@@ -21,11 +21,7 @@ export default function Home() {
             </div>
             <div className="flex justify-center lg:justify-end">
               <div className="relative max-w-md w-full">
-                <img
-                  src={tulipanes}
-                  alt="Milele Centro Multidisciplinar"
-                  className="w-full h-auto object-contain rounded-2xl shadow-2xl"
-                />
+                <HeroVideo className="w-full h-auto object-contain rounded-2xl shadow-2xl" />
               </div>
             </div>
           </div>
