@@ -29,7 +29,7 @@ export default function MapConsent({ className = "h-64" }) {
         <div className="h-full w-full flex items-center justify-center">
           <div className="text-center p-6">
             <MapPin className="h-8 w-8 text-gray-900 mx-auto mb-3" />
-            <p className="text-gray-900 font-semibold">Calle Lope de Rueda, 78a, 29190 Málaga</p>
+            <p className="text-gray-900 font-semibold">Mapa de la ubicación</p>
             <p className="text-gray-700 text-xs mt-2 max-w-xs mx-auto">
               El mapa es de Google: al cargarlo, Google recibe tu dirección IP y puede guardar cookies.
             </p>

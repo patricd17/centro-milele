@@ -6,8 +6,13 @@ import { sendContactEmail } from './email.js';
  */
 
 // Create a new contact form submission
-export const createContact = async ({ name, email, phone, message }) => {
+export const createContact = async ({ name, email, phone, message, website }) => {
   try {
+    // Campo trampa rellenado: es un robot. Se responde como si todo hubiera ido bien, sin guardar nada.
+    if (website) {
+      return { success: true, message: 'Mensaje enviado correctamente.' }
+    }
+
     // Validate required fields
     if (!name || !email || !message) {
       throw new Error('Los campos nombre, email y mensaje son obligatorios');
