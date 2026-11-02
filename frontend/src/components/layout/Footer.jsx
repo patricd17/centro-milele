@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router"
 import { MapPin, Phone, Mail, Instagram, Navigation } from "lucide-react"
+import InstagramIcon from "../icons/InstagramIcon"
 import { useCookieConsent } from "../../context/cookieConsentContext"
 import MapConsent from "../MapConsent"
 import fachada from "../../assets/images/fachada-milele.webp"
@@ -149,7 +150,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-white/60"
                     >
-                      <Instagram className="h-3.5 w-3.5" aria-hidden="true" />
+                      <InstagramIcon className="h-4 w-4" />
                       @centromilele
                     </a>
                   </div>
