@@ -3,7 +3,6 @@ import { useCookieConsent } from "../context/cookieConsentContext"
 
 const EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.3569234003569!2d-4.479799630349089!3d36.73630387302376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f72b44da7cc3%3A0x1247ea5988f3f400!2sC.%20Lope%20de%20Rueda%2C%2078%2C%20Puerto%20de%20la%20Torre%2C%2029190%20M%C3%A1laga%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sco!4v1748354275548!5m2!1ses-419!2sco"
-const MAPS_LINK = "https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
 
 // Mapa de Google que solo se carga cuando la persona lo decide: al pulsar «Ver mapa aquí»
 // o si ya aceptó las cookies de terceros. Mientras tanto no se conecta con Google.
@@ -34,23 +33,14 @@ export default function MapConsent({ className = "h-64" }) {
             <p className="text-gray-700 text-xs mt-2 max-w-xs mx-auto">
               El mapa es de Google: al cargarlo, Google recibe tu dirección IP y puede guardar cookies.
             </p>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <button
-                type="button"
-                onClick={acceptAll}
-                className="rounded-full border-2 border-gray-900 px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-white/60 transition-colors cursor-pointer"
-              >
-                Ver mapa aquí
-              </button>
-              <a
-                href={MAPS_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-milele-gradient px-4 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow"
-              >
-                Abrir en Google Maps
-              </a>
-            </div>
+            <button
+              type="button"
+              onClick={acceptAll}
+              className="mt-4 rounded-full bg-milele-gradient px-5 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow cursor-pointer"
+            >
+              Ver mapa aquí
+            </button>
+            <p className="mt-3 text-xs text-gray-700">Si prefieres no cargarlo, usa «Cómo llegar».</p>
           </div>
         </div>
       )}
