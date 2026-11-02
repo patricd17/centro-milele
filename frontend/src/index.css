@@ -246,3 +246,7 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+/* Letra de los títulos y del menú (cargada con Fontsource) */
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}

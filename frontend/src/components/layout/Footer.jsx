@@ -48,31 +48,36 @@ export default function Footer() {
             )}
 
             <div>
-              <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Enlaces</h3>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link to="/" className="hover:text-milele-pink-dark transition-colors">
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="hover:text-milele-pink-dark transition-colors">
-                    Quienes Somos
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">
-                    Nuestros Espacios
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">
-                    Contacto
-                  </Link>
-                </li>
-              </ul>
+              {/* En la página de inicio los datos van en «Dónde estamos»: no se repiten los enlaces */}
+              {!isHome && (
+                <>
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Enlaces</h3>
+                <ul className="space-y-3 text-sm">
+                  <li>
+                    <Link to="/" className="hover:text-milele-pink-dark transition-colors">
+                      Inicio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="hover:text-milele-pink-dark transition-colors">
+                      Quienes Somos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">
+                      Nuestros Espacios
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">
+                      Contacto
+                    </Link>
+                  </li>
+                </ul>
+                </>
+              )}
 
-              <div className="mt-6">
+              <div className={isHome ? "" : "mt-6"}>
                 <h4 className="mb-3 text-sm font-semibold text-gray-900 font-serif">Síguenos</h4>
                 <a
                   href="https://www.instagram.com/centromilele"
