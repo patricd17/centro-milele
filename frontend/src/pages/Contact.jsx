@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router"
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
 
@@ -9,6 +10,7 @@ export default function Contact() {
     phone: "",
     message: "",
   })
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
   const handleChange = (e) => {
@@ -24,6 +26,7 @@ export default function Contact() {
     try {
       await contactAPI.submitContact(formData)
       setSubmitStatus('success')
+      setPrivacyAccepted(false)
       setFormData({
         name: "",
         email: "",
@@ -200,7 +203,34 @@ export default function Contact() {
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-milele-cyan-dark focus:outline-none focus:ring-2 focus:ring-milele-cyan-dark/20 transition-colors resize-none"
                     placeholder="Cuéntanos cómo podemos ayudarte..."
                   ></textarea>
-                </div>                <div className="pt-2">
+                </div>
+
+                <div className="space-y-3 rounded-xl bg-gray-50 p-4 text-xs text-gray-600">
+                  <p>
+                    <strong>Información básica sobre protección de datos.</strong> Responsable: Milele Málaga S.L.
+                    Finalidad: atender tu consulta. Legitimación: tu consentimiento. Destinatarios: proveedores de
+                    alojamiento y de envío de correo del centro. Derechos: acceso, rectificación, supresión,
+                    oposición, limitación y portabilidad, escribiendo a centromilele@gmail.com.
+                  </p>
+                  <label className="flex items-start gap-2 text-sm text-gray-700">
+                    <input
+                      type="checkbox"
+                      checked={privacyAccepted}
+                      onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                      required
+                      className="mt-1 h-4 w-4 flex-shrink-0 accent-milele-cyan-dark"
+                    />
+                    <span>
+                      He leído y acepto la{" "}
+                      <Link to="/politica-de-privacidad" className="font-medium text-milele-cyan-dark underline">
+                        Política de privacidad
+                      </Link>{" "}
+                      *
+                    </span>
+                  </label>
+                </div>
+
+                <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}

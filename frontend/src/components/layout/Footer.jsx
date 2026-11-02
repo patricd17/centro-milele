@@ -1,9 +1,9 @@
 import { Link } from "react-router"
 import { MapPin, Phone, Mail, Instagram } from "lucide-react"
-import { useState } from "react"
+import { useCookieConsent } from "../../context/cookieConsentContext"
 
 export default function Footer() {
-  const [mapError, setMapError] = useState(false);
+  const { thirdPartyAllowed, acceptAll, openSettings } = useCookieConsent()
 
   return (
     <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
@@ -74,7 +74,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Ubicación</h3>
             <div className="h-64 w-full overflow-hidden rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light border border-milele-green/20">
-              {!mapError ? (
+              {thirdPartyAllowed ? (
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.3569234003569!2d-4.479799630349089!3d36.73630387302376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f72b44da7cc3%3A0x1247ea5988f3f400!2sC.%20Lope%20de%20Rueda%2C%2078%2C%20Puerto%20de%20la%20Torre%2C%2029190%20M%C3%A1laga%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sco!4v1748354275548!5m2!1ses-419!2sco"
                   width="100%"
@@ -85,7 +85,6 @@ export default function Footer() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-lg"
                   title="Ubicación de Milele Centro Multidisciplinar"
-                  onError={() => setMapError(true)}
                 />
               ) : (
                 <div className="h-full w-full flex items-center justify-center rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light">
@@ -93,14 +92,26 @@ export default function Footer() {
                     <MapPin className="h-8 w-8 text-milele-cyan-dark mx-auto mb-3" />
                     <p className="text-gray-700 font-medium">Calle Lope de Rueda, 78a</p>
                     <p className="text-gray-600 text-sm">Puerto de la Torre, Málaga</p>
-                    <a
-                      href="https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-3 text-milele-cyan-dark hover:text-milele-pink-dark transition-colors text-sm font-medium"
-                    >
-                      Ver en Google Maps →
-                    </a>
+                    <p className="text-gray-500 text-xs mt-2">
+                      El mapa usa cookies de Google. Se mostrará si las aceptas.
+                    </p>
+                    <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
+                      <button
+                        type="button"
+                        onClick={acceptAll}
+                        className="rounded-lg bg-milele-gradient px-3 py-1.5 text-sm font-medium text-black shadow hover:shadow-md transition-shadow cursor-pointer"
+                      >
+                        Cargar mapa
+                      </button>
+                      <a
+                        href="https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-milele-cyan-dark hover:text-milele-pink-dark transition-colors text-sm font-medium"
+                      >
+                        Abrir en Google Maps ↗
+                      </a>
+                    </div>
                   </div>
                 </div>
               )}
@@ -109,7 +120,15 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-milele-green/20 py-6 text-center text-sm text-gray-600">
-          <p>© {new Date().getFullYear()} Milele Centro Multidisciplinar. Todos los derechos reservados.</p>
+          <nav className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
+            <Link to="/aviso-legal" className="hover:text-milele-pink-dark transition-colors">Aviso legal</Link>
+            <Link to="/politica-de-privacidad" className="hover:text-milele-pink-dark transition-colors">Política de privacidad</Link>
+            <Link to="/politica-de-cookies" className="hover:text-milele-pink-dark transition-colors">Política de cookies</Link>
+            <button type="button" onClick={openSettings} className="hover:text-milele-pink-dark transition-colors cursor-pointer">
+              Configurar cookies
+            </button>
+          </nav>
+          <p>© {new Date().getFullYear()} Milele Málaga S.L. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
