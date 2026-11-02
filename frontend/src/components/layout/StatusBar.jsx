@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
-import { Phone } from "lucide-react"
-import { getOpeningStatus } from "../../lib/openingHours"
+import { Info, Phone } from "lucide-react"
+import { getClosureNotice, getOpeningStatus } from "../../lib/openingHours"
+import { rangeText } from "../../lib/dates"
+import { useClosures } from "../../context/closuresContext"
 
 const DOT_COLORS = {
   open: "bg-green-500",
@@ -8,12 +10,16 @@ const DOT_COLORS = {
 }
 
 export default function StatusBar() {
-  const [status, setStatus] = useState(() => getOpeningStatus())
+  const { closures } = useClosures()
+  const [now, setNow] = useState(() => new Date())
 
   useEffect(() => {
-    const id = setInterval(() => setStatus(getOpeningStatus()), 30000)
+    const id = setInterval(() => setNow(new Date()), 30000)
     return () => clearInterval(id)
   }, [])
+
+  const status = getOpeningStatus(now, closures)
+  const notice = getClosureNotice(closures, now)
 
   return (
     <div className="bg-gray-50 text-gray-900">
@@ -50,6 +56,17 @@ export default function StatusBar() {
           </span>
         </a>
       </div>
+      {notice && (
+        <div className="border-t border-amber-200 bg-amber-50 text-amber-900">
+          <p className="container mx-auto flex items-start gap-2 px-4 py-2 text-[13px] leading-snug sm:text-sm">
+            <Info className="mt-0.5 h-4 w-4 flex-shrink-0" aria-hidden="true" />
+            <span>
+              El centro permanece cerrado {rangeText(notice.start_date, notice.end_date)}
+              {notice.reason ? ` (${notice.reason})` : ""}.
+            </span>
+          </p>
+        </div>
+      )}
     </div>
   )
 }

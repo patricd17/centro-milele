@@ -1,4 +1,5 @@
 import { holidayName } from "./holidays.js"
+import { addDays, longDate } from "./dates.js"
 
 const TIME_ZONE = "Europe/Madrid"
 const OPENING_HOUR = 16
@@ -27,7 +28,30 @@ function madridParts(date) {
     day: Number(parts.day),
     hour: Number(parts.hour),
     weekday: WEEKDAYS[parts.weekday],
+    iso: `${parts.year}-${parts.month}-${parts.day}`,
   }
+}
+
+// Fecha de hoy en Madrid ("AAAA-MM-DD").
+export function todayISO(date = new Date()) {
+  return madridParts(date).iso
+}
+
+// Cierre marcado por el equipo que incluye esa fecha, si lo hay.
+function closureOn(iso, closures) {
+  return closures.find((c) => c.start_date <= iso && iso <= c.end_date) ?? null
+}
+
+/**
+ * Cierre próximo o en curso que hay que avisar en la web: desde "notice_days" días antes
+ * hasta que termina. Devuelve null si no hay ninguno.
+ */
+export function getClosureNotice(closures = [], date = new Date()) {
+  const today = madridParts(date).iso
+  const active = closures
+    .filter((c) => c.notice_days > 0 && today <= c.end_date && today >= addDays(c.start_date, -c.notice_days))
+    .sort((a, b) => a.start_date.localeCompare(b.start_date))
+  return active[0] ?? null
 }
 
 function isWeekend(weekday) {
@@ -35,20 +59,22 @@ function isWeekend(weekday) {
 }
 
 // Siguiente día en el que el centro abre por la tarde: { daysAhead, weekday }.
-function nextOpeningDay({ year, month, day }) {
-  for (let ahead = 1; ahead <= 14; ahead++) {
+function nextOpeningDay({ year, month, day }, closures) {
+  for (let ahead = 1; ahead <= 120; ahead++) {
     const date = new Date(Date.UTC(year, month - 1, day + ahead))
     const weekday = date.getUTCDay()
+    const iso = date.toISOString().slice(0, 10)
     const holiday = holidayName(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate())
-    if (!isWeekend(weekday) && !holiday) return { daysAhead: ahead, weekday }
+    if (!isWeekend(weekday) && !holiday && !closureOn(iso, closures)) return { daysAhead: ahead, weekday, iso }
   }
   return null
 }
 
-function reopeningText(parts) {
-  const next = nextOpeningDay(parts)
+function reopeningText(parts, closures) {
+  const next = nextOpeningDay(parts, closures)
   if (!next) return ""
-  const when = next.daysAhead === 1 ? "mañana" : `el ${WEEKDAY_NAMES[next.weekday]}`
+  const when =
+    next.daysAhead === 1 ? "mañana" : next.daysAhead < 7 ? `el ${WEEKDAY_NAMES[next.weekday]}` : `el ${longDate(next.iso)}`
   return `Abrimos ${when} a las ${OPENING_HOUR}:00`
 }
 
@@ -59,15 +85,23 @@ function reopeningText(parts) {
  * Sábados, domingos y festivos, cerrado. Por la mañana se muestra "cerrado" y se
  * indica que se atiende con cita (appointment: true) para que el teléfono invite a pedirla.
  */
-export function getOpeningStatus(date = new Date()) {
+export function getOpeningStatus(date = new Date(), closures = []) {
   const parts = madridParts(date)
+  const closure = closureOn(parts.iso, closures)
   const holiday = holidayName(parts.year, parts.month, parts.day)
 
+  if (closure) {
+    return {
+      state: "closed",
+      label: `Cerrado · ${closure.reason || "cierre del centro"}`,
+      detail: reopeningText(parts, closures),
+    }
+  }
   if (holiday) {
-    return { state: "closed", label: `Cerrado · ${holiday}`, detail: reopeningText(parts) }
+    return { state: "closed", label: `Cerrado · ${holiday}`, detail: reopeningText(parts, closures) }
   }
   if (isWeekend(parts.weekday)) {
-    return { state: "closed", label: "Cerrado · fin de semana", detail: reopeningText(parts) }
+    return { state: "closed", label: "Cerrado · fin de semana", detail: reopeningText(parts, closures) }
   }
   if (parts.hour >= OPENING_HOUR && parts.hour < CLOSING_HOUR) {
     return { state: "open", label: "Abierto ahora", detail: `Hasta las ${CLOSING_HOUR}:00` }
@@ -80,5 +114,5 @@ export function getOpeningStatus(date = new Date()) {
       appointment: true,
     }
   }
-  return { state: "closed", label: "Cerrado", detail: reopeningText(parts) }
+  return { state: "closed", label: "Cerrado", detail: reopeningText(parts, closures) }
 }
