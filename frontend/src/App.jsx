@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Spaces from './pages/Spaces'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import StatusBar from './components/layout/StatusBar'
 import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
 import Professional from './pages/Professional'
@@ -27,6 +28,7 @@ function App() {
     <BrowserRouter>
       <CookieConsentProvider>
       <ScrollToTop />
+      <StatusBar />
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
