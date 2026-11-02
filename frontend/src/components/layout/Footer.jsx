@@ -96,27 +96,26 @@ export default function Footer() {
               ) : (
                 <div className="h-full w-full flex items-center justify-center rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light">
                   <div className="text-center p-6">
-                    <MapPin className="h-8 w-8 text-milele-cyan-dark mx-auto mb-3" />
-                    <p className="text-gray-700 font-medium">Calle Lope de Rueda, 78a</p>
-                    <p className="text-gray-600 text-sm">Puerto de la Torre, Málaga</p>
-                    <p className="text-gray-500 text-xs mt-2">
-                      El mapa usa cookies de Google. Se mostrará si las aceptas.
+                    <MapPin className="h-8 w-8 text-gray-900 mx-auto mb-3" />
+                    <p className="text-gray-900 font-semibold">Calle Lope de Rueda, 78a, 29190 Málaga</p>
+                    <p className="text-gray-700 text-xs mt-2 max-w-xs mx-auto">
+                      El mapa es de Google: al cargarlo, Google recibe tu dirección IP y puede guardar cookies.
                     </p>
-                    <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
                       <button
                         type="button"
                         onClick={acceptAll}
-                        className="rounded-lg bg-milele-gradient px-3 py-1.5 text-sm font-medium text-black shadow hover:shadow-md transition-shadow cursor-pointer"
+                        className="rounded-full border-2 border-gray-900 px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-white/60 transition-colors cursor-pointer"
                       >
-                        Cargar mapa
+                        Ver mapa aquí
                       </button>
                       <a
                         href="https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-milele-cyan-dark hover:text-milele-pink-dark transition-colors text-sm font-medium"
+                        className="rounded-full bg-milele-gradient px-4 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow"
                       >
-                        Abrir en Google Maps ↗
+                        Abrir en Google Maps
                       </a>
                     </div>
                   </div>

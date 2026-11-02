@@ -108,7 +108,7 @@ export default function PoliticaPrivacidad() {
         Comisión Europea o cláusulas contractuales tipo). Puede solicitar más información en {COMPANY.email}.
       </p>
       <p>
-        Además, si acepta las cookies de terceros, Google LLC tratará datos técnicos de su navegación al mostrar
+        Además, si acepta las cookies de terceros, Google LLC tratará datos técnicos de su navegación (como su dirección IP) al mostrar
         el mapa de ubicación. Encontrará más información en nuestra{" "}
         <Link to="/politica-de-cookies">Política de cookies</Link>.
       </p>
