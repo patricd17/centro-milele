@@ -27,7 +27,7 @@ export default function Home() {
               <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
                 <Link
                   to="/contact#formulario"
-                  className="inline-flex items-center justify-center rounded-full bg-milele-green px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-green-dark active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
                 >
                   Pedir cita
                 </Link>
@@ -281,7 +281,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row">
               <Link
                 to="/contact#formulario"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-milele-green px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-green-dark active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
               >
                 Contactar ahora <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
