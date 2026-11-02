@@ -1,6 +1,5 @@
-import { Info, MessageCircle, Phone } from "lucide-react"
+import { Info, Phone } from "lucide-react"
 import { rangeText } from "../../lib/dates"
-import { whatsappLink } from "../../lib/whatsapp"
 
 const DOT_COLORS = {
   open: "bg-green-500",
@@ -29,19 +28,9 @@ export default function StatusBarView({ status, notice }) {
             )}
           </span>
         </p>
-        <div className="flex flex-shrink-0 items-center gap-2">
-        <a
-          href={whatsappLink()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-[#25D366] px-3 py-1.5 text-sm font-semibold leading-tight text-white transition-colors hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] md:inline-flex"
-        >
-          <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          WhatsApp
-        </a>
         <a
           href="tel:+34614438477"
-          className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[13px] font-semibold tabular-nums leading-tight ring-1 ring-gray-200 transition-colors hover:ring-milele-cyan-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark sm:text-sm"
+          className="inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[13px] font-semibold tabular-nums leading-tight ring-1 ring-gray-200 transition-colors hover:ring-milele-cyan-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark sm:text-sm"
         >
           <Phone className="h-4 w-4 text-milele-cyan-dark" aria-hidden="true" />
           <span>
@@ -53,7 +42,6 @@ export default function StatusBarView({ status, notice }) {
             614 438 477
           </span>
         </a>
-        </div>
       </div>
       {notice && (
         <div className="border-t border-amber-200 bg-amber-50 text-amber-900">
