@@ -4,7 +4,6 @@ import { getOpeningStatus } from "../../lib/openingHours"
 
 const DOT_COLORS = {
   open: "bg-green-500",
-  appointment: "bg-amber-400",
   closed: "bg-red-500",
 }
 
@@ -39,7 +38,14 @@ export default function StatusBar() {
           className="flex flex-shrink-0 items-center gap-2 text-sm font-semibold hover:underline"
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
-          <span>614 438 477</span>
+          <span className="leading-tight">
+            {status.appointment && (
+              <span className="block text-xs font-normal sm:inline sm:text-sm sm:font-semibold">
+                Pedir cita<span className="hidden sm:inline">:</span>{" "}
+              </span>
+            )}
+            614 438 477
+          </span>
         </a>
       </div>
     </div>

@@ -54,9 +54,10 @@ function reopeningText(parts) {
 
 /**
  * Estado del centro en un instante dado.
- * state: "open" | "appointment" | "closed"
- * Horario: lunes a viernes, mañanas con cita previa y tardes de 16:00 a 20:00.
- * Sábados, domingos y festivos, cerrado.
+ * state: "open" | "closed"
+ * Horario: lunes a viernes, mañanas solo con cita previa y tardes de 16:00 a 20:00.
+ * Sábados, domingos y festivos, cerrado. Por la mañana se muestra "cerrado" y se
+ * indica que se atiende con cita (appointment: true) para que el teléfono invite a pedirla.
  */
 export function getOpeningStatus(date = new Date()) {
   const parts = madridParts(date)
@@ -73,9 +74,10 @@ export function getOpeningStatus(date = new Date()) {
   }
   if (parts.hour < OPENING_HOUR) {
     return {
-      state: "appointment",
-      label: "Mañanas con cita previa",
-      detail: `Abrimos a las ${OPENING_HOUR}:00`,
+      state: "closed",
+      label: "Cerrado ahora",
+      detail: `Mañanas solo con cita · Abrimos a las ${OPENING_HOUR}:00`,
+      appointment: true,
     }
   }
   return { state: "closed", label: "Cerrado", detail: reopeningText(parts) }
