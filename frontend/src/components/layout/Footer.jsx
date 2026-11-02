@@ -1,126 +1,122 @@
 import { Link } from "react-router"
-import { MapPin, Phone, Mail, Instagram } from "lucide-react"
+import { Instagram, Navigation } from "lucide-react"
 import { useCookieConsent } from "../../context/cookieConsentContext"
+import fachada from "../../assets/images/fachada-milele.webp"
+
+const MAPS_PLACE = "https://www.google.com/maps/search/?api=1&query=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
+const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
 
 export default function Footer() {
-  const { thirdPartyAllowed, acceptAll, openSettings } = useCookieConsent()
+  const { openSettings } = useCookieConsent()
 
   return (
     <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-milele-gradient opacity-5"></div>
       <div className="container mx-auto px-4 relative">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Left Column - Contact and Links */}
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Contacto</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
-                  <MapPin className="mr-2 h-5 w-5 text-milele-cyan-dark flex-shrink-0 mt-0.5" />
-                  <span>Calle Lope de Rueda, 78a</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="mr-2 h-5 w-5 text-milele-cyan-dark" />
-                  <a href="tel:+34614438477" className="hover:text-milele-pink-dark transition-colors">
-                    +34 614 438 477
-                  </a>
-                </li>
-                <li className="flex items-center">
-                  <Mail className="mr-2 h-5 w-5 text-milele-cyan-dark" />
-                  <a
-                    href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
-                    className="hover:text-milele-pink-dark transition-colors"
-                  >
-                    centromilele@gmail.com
-                  </a>
-                </li>
-              </ul>
+        <div className="grid gap-10 lg:grid-cols-[1fr_2.2fr]">
+          {/* Left Column - Links */}
+          <div>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Enlaces</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/" className="hover:text-milele-pink-dark transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-milele-pink-dark transition-colors">
+                  Quienes Somos
+                </Link>
+              </li>
+              <li>
+                <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">
+                  Nuestros Espacios
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+
+            <div className="mt-6">
+              <h4 className="mb-3 text-sm font-semibold text-gray-900 font-serif">Síguenos</h4>
+              <a
+                href="https://www.instagram.com/centromilele"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-milele-pink-dark transition-colors"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-cyan text-white mr-3">
+                  <Instagram className="h-4 w-4" />
+                </div>
+                <span className="text-sm">@centromilele</span>
+              </a>
             </div>
+          </div>
 
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Enlaces</h3>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link to="/" className="hover:text-milele-pink-dark transition-colors">
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="hover:text-milele-pink-dark transition-colors">
-                    Quienes Somos
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">
-                    Nuestros Espacios
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">
-                    Contacto
-                  </Link>
-                </li>
-              </ul>
-
-              <div className="mt-6">
-                <h4 className="mb-3 text-sm font-semibold text-gray-900 font-serif">Síguenos</h4>
+          {/* Right Column - Dónde estamos */}
+          <div>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Dónde estamos</h3>
+            <div className="grid gap-6 md:grid-cols-2">
+              <img
+                src={fachada}
+                alt="Fachada del centro Milele en Puerto de la Torre, Málaga"
+                width="680"
+                height="510"
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-lg object-cover"
+              />
+              <div className="flex flex-col text-sm">
+                <p className="mb-4 text-gray-700">Nos encuentras en Puerto de la Torre, Málaga.</p>
+                <dl className="space-y-3">
+                  <div>
+                    <dt className="font-semibold text-gray-900">Dirección</dt>
+                    <dd>
+                      <a href={MAPS_PLACE} target="_blank" rel="noopener noreferrer" className="hover:text-milele-pink-dark transition-colors">
+                        Calle Lope de Rueda, 78a, 29190 Málaga
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-gray-900">Horario</dt>
+                    <dd>
+                      Lunes a viernes: mañanas con cita previa y tardes de 16:00 a 20:00.
+                      <br />
+                      Sábados, domingos y festivos, cerrado.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-gray-900">Teléfono</dt>
+                    <dd>
+                      <a href="tel:+34614438477" className="hover:text-milele-pink-dark transition-colors">
+                        614 438 477
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-gray-900">Correo</dt>
+                    <dd>
+                      <a
+                        href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
+                        className="hover:text-milele-pink-dark transition-colors"
+                      >
+                        centromilele@gmail.com
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
                 <a
-                  href="https://www.instagram.com/centromilele"
+                  href={MAPS_ROUTE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center hover:text-milele-pink-dark transition-colors"
+                  className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full bg-milele-gradient px-5 py-2.5 text-sm font-medium text-black shadow transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-cyan text-white mr-3">
-                    <Instagram className="h-4 w-4" />
-                  </div>
-                  <span className="text-sm">@centromilele</span>
+                  <Navigation className="h-4 w-4" aria-hidden="true" />
+                  Cómo llegar
                 </a>
               </div>
-            </div>
-          </div>          {/* Right Column - Map */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Ubicación</h3>
-            <div className="h-64 w-full overflow-hidden rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light border border-milele-green/20">
-              {thirdPartyAllowed ? (
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.3569234003569!2d-4.479799630349089!3d36.73630387302376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f72b44da7cc3%3A0x1247ea5988f3f400!2sC.%20Lope%20de%20Rueda%2C%2078%2C%20Puerto%20de%20la%20Torre%2C%2029190%20M%C3%A1laga%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sco!4v1748354275548!5m2!1ses-419!2sco"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                  title="Ubicación de Milele Centro Multidisciplinar"
-                />
-              ) : (
-                <div className="h-full w-full flex items-center justify-center rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light">
-                  <div className="text-center p-6">
-                    <MapPin className="h-8 w-8 text-gray-900 mx-auto mb-3" />
-                    <p className="text-gray-900 font-semibold">Calle Lope de Rueda, 78a, 29190 Málaga</p>
-                    <p className="text-gray-700 text-xs mt-2 max-w-xs mx-auto">
-                      El mapa es de Google: al cargarlo, Google recibe tu dirección IP y puede guardar cookies.
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                      <button
-                        type="button"
-                        onClick={acceptAll}
-                        className="rounded-full border-2 border-gray-900 px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-white/60 transition-colors cursor-pointer"
-                      >
-                        Ver mapa aquí
-                      </button>
-                      <a
-                        href="https://maps.google.com/?q=Calle+Lope+de+Rueda+78a+Puerto+de+la+Torre+Málaga"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-milele-gradient px-4 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow"
-                      >
-                        Abrir en Google Maps
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

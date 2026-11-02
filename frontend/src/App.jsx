@@ -5,6 +5,7 @@ import Spaces from './pages/Spaces'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import StatusBar from './components/layout/StatusBar'
+import BackToTop from './components/layout/BackToTop'
 import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
 import Professional from './pages/Professional'
@@ -43,6 +44,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <BackToTop />
       <CookieBanner />
       </CookieConsentProvider>
     </BrowserRouter>

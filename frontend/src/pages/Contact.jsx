@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router"
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
+import MapConsent from "../components/MapConsent"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -125,6 +126,11 @@ export default function Contact() {
                           </div>
                         </div>
                       </div>
+
+                  <div className="p-6 bg-white rounded-2xl shadow-lg milele-shadow border border-milele-cyan/10">
+                    <h3 className="font-semibold text-gray-900 font-serif mb-4">Dónde estamos</h3>
+                    <MapConsent className="h-72" />
+                  </div>
                 </div>
               </div>
             </div>
