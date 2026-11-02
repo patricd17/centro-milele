@@ -4,9 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { supabase } from "../lib/supabase"
 import { createClosure, deleteClosure } from "../lib/closures"
 import { holidayName } from "../lib/holidays"
-import { todayISO } from "../lib/openingHours"
+import { getClosureNotice, getOpeningStatus, todayISO } from "../lib/openingHours"
+import StatusBarView from "../components/layout/StatusBarView"
 import { useClosures } from "../context/closuresContext"
-import { MONTHS, addDays, daysBetween, daysInMonth, mondayIndex, parseISO, rangeText, toISO } from "../lib/dates"
+import { MONTHS, addDays, daysBetween, daysInMonth, longDate, mondayIndex, parseISO, rangeText, toISO } from "../lib/dates"
 import logoMilele from "../assets/images/logo-milele.webp"
 
 const NOTICE_OPTIONS = [
@@ -70,6 +71,34 @@ function LoginForm() {
           {busy ? "Entrando…" : "Entrar"}
         </button>
       </form>
+    </div>
+  )
+}
+
+
+// Maqueta del navegador con la barra de la web tal y como la verá una persona en el ordenador.
+function WebPreview({ title, status, notice }) {
+  return (
+    <div>
+      <p className="mb-2 text-sm font-medium text-gray-700">{title}</p>
+      <div className="overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm">
+        <div className="flex items-center gap-1.5 border-b border-gray-200 bg-gray-100 px-3 py-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-gray-300" />
+          <span className="h-2.5 w-2.5 rounded-full bg-gray-300" />
+          <span className="h-2.5 w-2.5 rounded-full bg-gray-300" />
+          <span className="ml-3 rounded-md bg-white px-3 py-0.5 text-xs text-gray-500">centromilele.es</span>
+        </div>
+        <StatusBarView status={status} notice={notice} />
+        <div className="flex items-center justify-between border-t border-gray-100 px-6 py-3">
+          <img src={logoMilele} alt="" className="h-12 w-12 rounded-full" />
+          <div className="flex gap-6 text-sm text-gray-700 font-serif">
+            <span>Inicio</span>
+            <span>Quienes Somos</span>
+            <span>Nuestros Espacios</span>
+            <span>Contacto</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -139,6 +168,28 @@ function ClosuresPanel() {
   const blanks = mondayIndex(cursor.y, cursor.m, 1)
   const cells = Array.from({ length: daysInMonth(cursor.y, cursor.m) }, (_, i) => i + 1)
   const count = start ? daysBetween(start, end) + 1 : 0
+
+  // Vista previa: cómo se vería la web con el cierre que se está preparando.
+  const draft = start ? { id: "draft", start_date: start, end_date: end, reason: reason.trim() || null, notice_days: notice } : null
+  const simulated = draft ? [...closures, draft] : closures
+  const at = (iso, hour) => new Date(`${iso}T${hour}:00:00Z`)
+  const noticeDay = draft && notice > 0 ? (addDays(start, -notice) < today ? today : addDays(start, -notice)) : null
+  const previews = draft
+    ? [
+        ...(noticeDay
+          ? [{
+              title: `Desde el ${longDate(noticeDay)} (aviso antes del cierre)`,
+              status: getOpeningStatus(at(noticeDay, 16), simulated),
+              notice: getClosureNotice(simulated, at(noticeDay, 16)),
+            }]
+          : []),
+        {
+          title: `El ${longDate(start)} (día del cierre)`,
+          status: getOpeningStatus(at(start, 12), simulated),
+          notice: getClosureNotice(simulated, at(start, 12)),
+        },
+      ]
+    : []
 
   const upcomingHolidays = []
   for (let i = 0; i < 365 && upcomingHolidays.length < 5; i++) {
@@ -210,6 +261,19 @@ function ClosuresPanel() {
           <span><i className="mr-1 inline-block h-3 w-3 rounded bg-pink-100 align-[-1px]" />Festivo oficial</span>
           <span><i className="mr-1 inline-block h-3 w-3 rounded ring-2 ring-gray-900 align-[-1px]" />Hoy</span>
         </div>
+
+        <div className="mt-8 border-t border-gray-200 pt-6">
+          <h2 className="mb-1 text-lg font-semibold text-gray-900">Así se verá en la web (ordenador)</h2>
+          {previews.length === 0 ? (
+            <p className="text-sm text-gray-600">Elige un día del calendario y aquí verás cómo queda la web con el aviso.</p>
+          ) : (
+            <div className="mt-3 space-y-5">
+              {previews.map((pv) => (
+                <WebPreview key={pv.title} title={pv.title} status={pv.status} notice={pv.notice} />
+              ))}
+            </div>
+          )}
+        </div>
       </section>
 
       <aside className="space-y-6">
@@ -263,13 +327,6 @@ function ClosuresPanel() {
                   </button>
                 ))}
               </div>
-
-              <p className="mb-1 text-sm font-medium text-gray-700">Así se verá en la web</p>
-              <p className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
-                {notice > 0
-                  ? `El centro permanece cerrado ${rangeText(start, end)}${reason.trim() ? ` (${reason.trim()})` : ""}.`
-                  : "Sin aviso previo. Ese día la barra de arriba dirá «Cerrado»."}
-              </p>
 
               <button
                 type="button"
