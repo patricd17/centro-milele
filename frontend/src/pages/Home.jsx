@@ -1,27 +1,47 @@
 import { Link } from "react-router"
-import { ArrowRight, Heart, Brain, Users, Star, Sparkles, ClipboardList, UserCheck, Target, CheckCircle, MessageSquare, BookOpen, Shield, TrendingUp, HandHeart, GraduationCap } from "lucide-react"
+import { ArrowRight, ClipboardList, UserCheck, Target, CheckCircle } from "lucide-react"
 import HeroVideo from "../components/HeroVideo"
+import Reveal from "../components/Reveal"
+import card_tulipan from "../assets/images/card-tulipan.webp"
+import card_arcoiris from "../assets/images/card-arcoiris.webp"
+import card_mariposa from "../assets/images/card-mariposa.webp"
 
 export default function Home() {
   return (
     <>
-      {/* Banner */}
-      <section className="relative bg-milele-gradient py-20 text-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="grid max-w-6xl mx-auto gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="space-y-6 text-center lg:text-left">
-              <h1 className="text-4xl font-bold leading-tight md:text-5xl font-serif">
-                <span className="moontime-light text-5xl md:text-8xl block mb-2">Milele</span>
+      {/* Portada */}
+      <section className="relative overflow-hidden bg-[#f4fbf3] py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div className="text-center lg:text-left">
+              <h1 className="font-serif text-4xl font-semibold leading-tight text-gray-900 md:text-5xl">
+                <span className="moontime-light mb-2 block text-6xl font-normal md:text-8xl">Milele</span>
                 Para siempre
               </h1>
-              <p className="text-lg md:text-xl opacity-90 max-w-lg mx-auto lg:mx-0">
+              <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-gray-800 lg:mx-0">
                 En Milele, cada persona es única, y por eso nos esforzamos en ofrecer soluciones terapéuticas que se ajusten a sus necesidades.
               </p>
+              <p className="mx-auto mt-3 max-w-lg text-base text-gray-600 lg:mx-0">
+                Logopedia, pedagogía terapéutica y psicología en Puerto de la Torre, Málaga.
+              </p>
+              <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                <Link
+                  to="/contact#formulario"
+                  className="inline-flex items-center justify-center rounded-full bg-milele-green px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-green-dark active:scale-[0.98]"
+                >
+                  Pedir cita
+                </Link>
+                <Link
+                  to="/spaces"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-gray-900 px-7 py-3 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-white active:scale-[0.98]"
+                >
+                  Ver los espacios
+                </Link>
+              </div>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="relative max-w-md w-full">
-                <HeroVideo className="w-full h-auto object-contain rounded-2xl shadow-2xl" />
+              <div className="w-full max-w-md">
+                <HeroVideo className="h-auto w-full rounded-2xl object-contain" />
               </div>
             </div>
           </div>
@@ -146,136 +166,133 @@ export default function Home() {
           </div>
         </div>
       </section>      {/* Qué ofrecemos */}
-      <section className="py-16">
+      <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl font-serif">
-            Qué <span className="gradient-text">Ofrecemos</span>
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-green-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-green/20">
-              <div className="mb-4 flex items-center">
-                <MessageSquare className="h-6 w-6 text-milele-green-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Terapia de Logopedia</h3>
+          <Reveal as="h2" className="mb-10 font-serif text-3xl font-semibold text-gray-900 md:mb-14 md:text-4xl">
+            Qué ofrecemos
+          </Reveal>
+          <div className="grid gap-5 md:grid-cols-3">
+            <Reveal delay={0} className="flex flex-col overflow-hidden rounded-2xl bg-milele-green-light/60">
+              <img
+                src={card_tulipan}
+                alt="Sala Tulipán, donde trabaja la logopedia"
+                width="640"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-2xl font-semibold text-gray-900">Logopedia</h3>
+                <p className="mt-1 text-sm text-gray-600">Sala Tulipán</p>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
+                  Se enfoca en el desarrollo del lenguaje y la comunicación, abordando problemas como trastornos del habla, deglución, audición, y otros aspectos relacionados con la comunicación verbal y no verbal.
+                </p>
+                <Link to="/about/patricia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
+                  Conocer a Patricia <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
-              <p className="text-gray-600">
-                Se enfoca en el desarrollo del lenguaje y la comunicación, abordando problemas como trastornos del habla, deglución, audición, y otros aspectos relacionados con la comunicación verbal y no verbal.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-cyan-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-cyan/20">
-              <div className="mb-4 flex items-center">
-                <GraduationCap className="h-6 w-6 text-milele-cyan-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Terapia Pedagógica</h3>
+            </Reveal>
+            <Reveal delay={80} className="flex flex-col overflow-hidden rounded-2xl bg-milele-cyan-light/60">
+              <img
+                src={card_arcoiris}
+                alt="Sala Arco Iris, donde trabaja la pedagogía terapéutica"
+                width="640"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-2xl font-semibold text-gray-900">Pedagogía</h3>
+                <p className="mt-1 text-sm text-gray-600">Sala Arco Iris</p>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
+                  Nos centramos en el apoyo escolar para las dificultades de aprendizaje (lectura, escritura, cálculo), bajo rendimiento, falta de motivación y autonomía, problemas en la organización, dificultades socioemocionales, en el desarrollo de habilidades cognitivas.
+                </p>
+                <Link to="/about/lucia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
+                  Conocer a Lucía <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
-              <p className="text-gray-600">
-                Nos centramos en el apoyo escolar para las dificultades de aprendizaje (lectura, escritura, cálculo), bajo rendimiento, falta de motivación y autonomía, problemas en la organización, dificultades socioemocionales, en el desarrollo de habilidades cognitivas.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-pink-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-pink/20">
-              <div className="mb-4 flex items-center">
-                <Brain className="h-6 w-6 text-milele-pink-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Terapia Psicológica</h3>
+            </Reveal>
+            <Reveal delay={160} className="flex flex-col overflow-hidden rounded-2xl bg-milele-pink-light">
+              <img
+                src={card_mariposa}
+                alt="Sala Mariposa, donde trabaja la psicología"
+                width="640"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-2xl font-semibold text-gray-900">Psicología</h3>
+                <p className="mt-1 text-sm text-gray-600">Sala Mariposa</p>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
+                  Trabajamos con técnicas de intervención que promueven el bienestar psicológico, emocional, y social de la persona y su entorno atendiendo a sus necesidades específicas y mejorando su calidad de vida.
+                </p>
+                <Link to="/about/silvia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
+                  Conocer a Silvia <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
-              <p className="text-gray-600">
-                Trabajamos con técnicas de intervención que promueven el bienestar psicológico, emocional, y social de la persona y su entorno atendiendo a sus necesidades específicas y mejorando su calidad de vida.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-green-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-green/20">
-              <div className="mb-4 flex items-center">
-                <TrendingUp className="h-6 w-6 text-milele-green-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Seguimiento y Evaluación Continua</h3>
-              </div>
-              <p className="text-gray-600">
-                El proceso terapéutico en Milele no termina con las sesiones individuales. Llevamos a cabo un seguimiento constante para evaluar la evolución del paciente y realizar ajustes en el plan de intervención según sea necesario.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-cyan-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-cyan/20">
-              <div className="mb-4 flex items-center">
-                <HandHeart className="h-6 w-6 text-milele-cyan-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Colaboración con Familia y Profesionales</h3>
-              </div>
-              <p className="text-gray-600">
-                En nuestro enfoque, es crucial para el éxito de la terapia. Ofrecemos orientación y apoyo a los familiares, con el objetivo de fomentar la continuidad de la intervención fuera del centro.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl bg-gradient-to-br from-milele-pink-light to-white p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-milele-pink/20">
-              <div className="mb-4 flex items-center">
-                <Shield className="h-6 w-6 text-milele-pink-dark mr-2" />
-                <h3 className="text-xl font-semibold font-serif">Enfoque de Prevención y Educación</h3>
-              </div>
-              <p className="text-gray-600">
-                Nos importa no solo tratar las dificultades actuales, sino también prevenir futuras complicaciones. Organizamos talleres, charlas y actividades que fomentan el desarrollo continuo en áreas clave de la salud emocional, cognitiva y comunicativa.
-              </p>
-            </div>
+            </Reveal>
+          </div>
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
+            <Reveal delay={0}>
+              <h3 className="font-serif text-xl font-semibold text-gray-900">Seguimiento y Evaluación Continua</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">El proceso terapéutico en Milele no termina con las sesiones individuales. Llevamos a cabo un seguimiento constante para evaluar la evolución del paciente y realizar ajustes en el plan de intervención según sea necesario.</p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h3 className="font-serif text-xl font-semibold text-gray-900">Colaboración con Familia y Profesionales</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">En nuestro enfoque, es crucial para el éxito de la terapia. Ofrecemos orientación y apoyo a los familiares, con el objetivo de fomentar la continuidad de la intervención fuera del centro.</p>
+            </Reveal>
+            <Reveal delay={160}>
+              <h3 className="font-serif text-xl font-semibold text-gray-900">Enfoque de Prevención y Educación</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">Nos importa no solo tratar las dificultades actuales, sino también prevenir futuras complicaciones. Organizamos talleres, charlas y actividades que fomentan el desarrollo continuo en áreas clave de la salud emocional, cognitiva y comunicativa.</p>
+            </Reveal>
           </div>
         </div>
-      </section>      {/* Por qué elegirnos */}
-      <section className="py-16 bg-milele-gradient-soft">
+      </section>
+
+      {/* Por qué elegirnos */}
+      <section className="bg-[#f4fbf3] py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl font-serif">
-            ¿Por qué <span className="moontime-font text-5xl gradient-text">Milele</span>?
-          </h2>          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-            <div className="flex items-start p-5 rounded-2xl bg-white shadow-md milele-shadow">
-              <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-milele-green to-milele-cyan text-white flex-shrink-0">
-                <Users className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold font-serif">Equipo Multidisciplinar</h3>
-                <p className="text-gray-600 text-sm">
-                  Equipo multidisciplinar altamente cualificado y en constante formación con un enfoque personalizado para cada paciente y un tratamiento único y adaptado.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start p-5 rounded-2xl bg-white shadow-md milele-shadow">
-              <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-milele-cyan to-milele-pink text-white flex-shrink-0">
-                <HandHeart className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold font-serif">Compromiso Integral</h3>
-                <p className="text-gray-600 text-sm">
-                  Compromiso con el bienestar integral de cada individuo, atendiendo todas sus necesidades.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start p-5 rounded-2xl bg-white shadow-md milele-shadow">
-              <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-green text-white flex-shrink-0">
-                <TrendingUp className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold font-serif">Seguimiento Constante</h3>
-                <p className="text-gray-600 text-sm">
-                  Seguimiento constante para asegurar el éxito y la evolución positiva del tratamiento.
-                </p>
-              </div>
-            </div>
+          <Reveal as="h2" className="font-serif text-3xl font-semibold text-gray-900 md:text-4xl">
+            ¿Por qué Milele?
+          </Reveal>
+          <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-3 md:gap-12">
+            <Reveal delay={0}>
+              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Equipo Multidisciplinar</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Equipo multidisciplinar altamente cualificado y en constante formación con un enfoque personalizado para cada paciente y un tratamiento único y adaptado.</p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Compromiso Integral</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Compromiso con el bienestar integral de cada individuo, atendiendo todas sus necesidades.</p>
+            </Reveal>
+            <Reveal delay={160}>
+              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Seguimiento Constante</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Seguimiento constante para asegurar el éxito y la evolución positiva del tratamiento.</p>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Contáctenos */}
-      <section className="bg-milele-gradient py-16 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl font-serif">
-              ¿Listo para dar el <span className="script-font text-4xl md:text-5xl">primer paso</span>?
-            </h2>
-            <p className="mb-8 text-lg opacity-90">
+      <section className="bg-[#10231a] py-16 text-white md:py-20">
+        <div className="container mx-auto px-4">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <h2 className="font-serif text-3xl font-semibold md:text-4xl">¿Listo para dar el primer paso?</h2>
+            <p className="mt-4 text-lg text-white/90">
               Contáctanos hoy mismo para programar tu primera consulta o resolver cualquier duda que tengas.
-            </p>            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-white px-8 py-4 text-sm font-medium text-gray-800 shadow-lg transition-all hover:shadow-xl hover:scale-105 milele-shadow"
-            >
-              Contactar ahora <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
+            </p>
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row">
+              <Link
+                to="/contact#formulario"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-milele-green px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-green-dark active:scale-[0.98]"
+              >
+                Contactar ahora <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <a
+                href="tel:+34614438477"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white px-7 py-3 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/10 active:scale-[0.98]"
+              >
+                Llamar · 614 438 477
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

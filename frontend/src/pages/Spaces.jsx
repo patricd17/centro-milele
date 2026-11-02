@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { useState } from "react"
 import { MapPin, ChevronLeft, ChevronRight, Home, Sparkles, ArrowRight, Clock, Users, Shield, Heart } from "lucide-react"
 import ImageCarousel from "../components/ImageCarousel"
@@ -241,12 +242,12 @@ export default function Spaces() {
               Agenda una cita para conocer nuestras instalaciones personalmente y descubrir cómo podemos ayudarte.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact#formulario"
                 className="inline-flex items-center rounded-full bg-white px-8 py-4 text-sm font-medium text-gray-800 shadow-lg transition-all hover:shadow-xl hover:scale-105 milele-shadow"
               >
                 Contactar ahora <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

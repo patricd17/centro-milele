@@ -238,7 +238,7 @@ export default function Professional() {
               Agenda una consulta para conocer mi enfoque y cómo puedo ayudarte en tu proceso.
             </p>
             <Link
-              href="/contacto"
+              to="/contact#formulario"
               className="inline-flex items-center rounded-full bg-white px-8 py-4 text-sm font-medium text-gray-800 shadow-lg transition-all hover:shadow-xl hover:scale-105 milele-shadow"
             >
               Contactar ahora <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />

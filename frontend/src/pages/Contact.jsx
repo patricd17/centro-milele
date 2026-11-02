@@ -71,7 +71,7 @@ export default function Contact() {
             <DondeEstamos variant="card" photo="frontal" className="order-2 lg:order-1" />
 
             {/* Contact Form */}
-            <div className="order-1 lg:order-2 bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
+            <div id="formulario" className="order-1 lg:order-2 scroll-mt-36 bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
               <div className="flex items-center mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-green text-white mr-4">
                   <MessageCircle className="h-6 w-6" />
