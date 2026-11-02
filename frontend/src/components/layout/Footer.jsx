@@ -17,82 +17,69 @@ export default function Footer() {
     <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-milele-gradient opacity-5"></div>
       <div className="container mx-auto px-4 relative">
-        <div className={`grid gap-8 ${isHome ? "lg:grid-cols-[1fr_2.2fr]" : showMap ? "lg:grid-cols-2" : ""}`}>
-          {/* Left Column - Contact and Links */}
-          <div className={`grid gap-8 ${isHome ? "" : "md:grid-cols-2"}`}>
-            {!isHome && (
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Contacto</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
-                  <MapPin className="mr-2 h-5 w-5 text-milele-cyan-dark flex-shrink-0 mt-0.5" />
-                  <span>Calle Lope de Rueda, 78a</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="mr-2 h-5 w-5 text-milele-cyan-dark" />
-                  <a href="tel:+34614438477" className="hover:text-milele-pink-dark transition-colors">
-                    +34 614 438 477
-                  </a>
-                </li>
-                <li className="flex items-center">
-                  <Mail className="mr-2 h-5 w-5 text-milele-cyan-dark" />
-                  <a
-                    href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
-                    className="hover:text-milele-pink-dark transition-colors"
-                  >
-                    centromilele@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-            )}
+        <div className={`grid gap-8 ${!isHome && showMap ? "lg:grid-cols-2" : ""}`}>
+          {/* Columna izquierda (no en inicio): contacto, enlaces y redes */}
+          {!isHome && (
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Contacto</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start">
+                    <MapPin className="mr-2 h-5 w-5 text-milele-cyan-dark flex-shrink-0 mt-0.5" />
+                    <span>Calle Lope de Rueda, 78a</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Phone className="mr-2 h-5 w-5 text-milele-cyan-dark" />
+                    <a href="tel:+34614438477" className="hover:text-milele-pink-dark transition-colors">
+                      +34 614 438 477
+                    </a>
+                  </li>
+                  <li className="flex items-center">
+                    <Mail className="mr-2 h-5 w-5 text-milele-cyan-dark" />
+                    <a
+                      href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
+                      className="hover:text-milele-pink-dark transition-colors"
+                    >
+                      centromilele@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-            <div>
-              {/* En la página de inicio los datos van en «Dónde estamos»: no se repiten los enlaces */}
-              {!isHome && (
-                <>
+              <div>
                 <h3 className="mb-4 text-lg font-semibold text-gray-900 font-serif">Enlaces</h3>
                 <ul className="space-y-3 text-sm">
                   <li>
-                    <Link to="/" className="hover:text-milele-pink-dark transition-colors">
-                      Inicio
-                    </Link>
+                    <Link to="/" className="hover:text-milele-pink-dark transition-colors">Inicio</Link>
                   </li>
                   <li>
-                    <Link to="/about" className="hover:text-milele-pink-dark transition-colors">
-                      Quienes Somos
-                    </Link>
+                    <Link to="/about" className="hover:text-milele-pink-dark transition-colors">Quienes Somos</Link>
                   </li>
                   <li>
-                    <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">
-                      Nuestros Espacios
-                    </Link>
+                    <Link to="/spaces" className="hover:text-milele-pink-dark transition-colors">Nuestros Espacios</Link>
                   </li>
                   <li>
-                    <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">
-                      Contacto
-                    </Link>
+                    <Link to="/contact" className="hover:text-milele-pink-dark transition-colors">Contacto</Link>
                   </li>
                 </ul>
-                </>
-              )}
 
-              <div className={isHome ? "" : "mt-6"}>
-                <h4 className="mb-3 text-sm font-semibold text-gray-900 font-serif">Síguenos</h4>
-                <a
-                  href="https://www.instagram.com/centromilele"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:text-milele-pink-dark transition-colors"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-cyan text-white mr-3">
-                    <Instagram className="h-4 w-4" />
-                  </div>
-                  <span className="text-sm">@centromilele</span>
-                </a>
+                <div className="mt-6">
+                  <h4 className="mb-3 text-sm font-semibold text-gray-900 font-serif">Síguenos</h4>
+                  <a
+                    href="https://www.instagram.com/centromilele"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center hover:text-milele-pink-dark transition-colors"
+                  >
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-cyan text-white mr-3">
+                      <Instagram className="h-4 w-4" />
+                    </div>
+                    <span className="text-sm">@centromilele</span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Right Column: en inicio, "Dónde estamos"; en el resto, el mapa (en /contact va dentro de la sección de contacto) */}
           {isHome ? (
@@ -146,15 +133,26 @@ export default function Footer() {
                       </dd>
                     </div>
                   </dl>
-                  <a
-                    href={MAPS_ROUTE}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full bg-milele-gradient px-5 py-2.5 text-sm font-medium text-black shadow transition-shadow hover:shadow-md"
-                  >
-                    <Navigation className="h-4 w-4" aria-hidden="true" />
-                    Cómo llegar
-                  </a>
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <a
+                      href={MAPS_ROUTE}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-milele-gradient px-5 py-2.5 text-sm font-medium text-black shadow transition-shadow hover:shadow-md"
+                    >
+                      <Navigation className="h-4 w-4" aria-hidden="true" />
+                      Cómo llegar
+                    </a>
+                    <a
+                      href="https://www.instagram.com/centromilele"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-white/60"
+                    >
+                      <Instagram className="h-4 w-4" aria-hidden="true" />
+                      @centromilele
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -168,7 +166,7 @@ export default function Footer() {
           )}
         </div>
 
-        <div className="mt-8 border-t border-milele-green/20 py-6 text-center text-sm text-gray-600">
+        <div className="mt-8 border-t border-milele-green/20 pb-44 pt-6 text-center text-sm text-gray-600 md:pb-6">
           <nav className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
             <Link to="/aviso-legal" className="hover:text-milele-pink-dark transition-colors">Aviso legal</Link>
             <Link to="/politica-de-privacidad" className="hover:text-milele-pink-dark transition-colors">Política de privacidad</Link>
