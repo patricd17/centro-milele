@@ -1,4 +1,5 @@
-import { Info, MessageCircle, Phone } from "lucide-react"
+import { Info, Phone } from "lucide-react"
+import WhatsAppIcon from "../icons/WhatsAppIcon"
 import { rangeText } from "../../lib/dates"
 import { whatsappLink } from "../../lib/whatsapp"
 
@@ -34,10 +35,10 @@ export default function StatusBarView({ status, notice }) {
           href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-[#25D366] px-3 py-1.5 text-sm font-semibold leading-tight text-white transition-colors hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-[#25D366] py-1.5 pl-2.5 pr-3.5 text-sm font-semibold leading-tight text-white shadow-[0_2px_10px_rgba(37,211,102,0.35)] transition-all hover:-translate-y-px hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] md:inline-flex"
         >
-          <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          WhatsApp
+          <WhatsAppIcon className="h-5 w-5" />
+          Escríbenos
         </a>
         <a
           href="tel:+34614438477"
