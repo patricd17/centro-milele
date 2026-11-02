@@ -13,6 +13,8 @@ import AvisoLegal from './pages/AvisoLegal'
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad'
 import PoliticaCookies from './pages/PoliticaCookies'
 import NotFound from './pages/NotFound'
+import Admin from './pages/Admin'
+import ClosuresProvider from './context/ClosuresProvider'
 import CookieBanner from './components/CookieBanner'
 import CookieConsentProvider from './context/CookieConsentProvider'
 
@@ -29,6 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <CookieConsentProvider>
+      <ClosuresProvider>
       <ScrollToTop />
       <StatusBar />
       <NavBar />
@@ -41,11 +44,13 @@ function App() {
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <BackToTop />
       <CookieBanner />
+      </ClosuresProvider>
       </CookieConsentProvider>
     </BrowserRouter>
   )

@@ -171,6 +171,7 @@ export default function Footer() {
             <button type="button" onClick={openSettings} className="hover:text-milele-pink-dark transition-colors cursor-pointer">
               Configurar cookies
             </button>
+            <Link to="/admin" className="hover:text-milele-pink-dark transition-colors">Acceso del equipo</Link>
           </nav>
           <p>© {new Date().getFullYear()} Milele Málaga S.L. Todos los derechos reservados.</p>
         </div>
