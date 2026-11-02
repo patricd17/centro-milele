@@ -108,6 +108,12 @@ export default function PoliticaPrivacidad() {
         Comisión Europea o cláusulas contractuales tipo). Puede solicitar más información en {COMPANY.email}.
       </p>
       <p>
+        Si nos escribe por WhatsApp (botón de la web o número del centro), sus datos de contacto y el contenido del
+        mensaje los tratará {COMPANY.name} para atender su consulta y, además, WhatsApp (Meta) como prestador del
+        servicio de mensajería, conforme a su propia política de privacidad. El botón solo abre WhatsApp cuando usted
+        lo pulsa.
+      </p>
+      <p>
         Además, si acepta las cookies de terceros, Google LLC tratará datos técnicos de su navegación (como su dirección IP) al mostrar
         el mapa de ubicación. Encontrará más información en nuestra{" "}
         <Link to="/politica-de-cookies">Política de cookies</Link>.

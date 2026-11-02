@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import StatusBar from './components/layout/StatusBar'
 import BackToTop from './components/layout/BackToTop'
+import WhatsAppButton from './components/layout/WhatsAppButton'
 import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
 import Professional from './pages/Professional'
@@ -56,6 +57,7 @@ function Shell() {
         <>
           <Footer />
           <BackToTop />
+          <WhatsAppButton />
           <CookieBanner />
         </>
       )}
