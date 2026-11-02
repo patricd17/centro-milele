@@ -147,9 +147,9 @@ export default function Footer() {
                       href="https://www.instagram.com/centromilele"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-white/60"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-white/60"
                     >
-                      <Instagram className="h-4 w-4" aria-hidden="true" />
+                      <Instagram className="h-3.5 w-3.5" aria-hidden="true" />
                       @centromilele
                     </a>
                   </div>
