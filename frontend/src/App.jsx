@@ -26,15 +26,20 @@ function ScrollToTop() {
   return null
 }
 
-function App() {
+// El panel del equipo (/admin) va sin cabecera, barra de horario, pie ni avisos de la web pública.
+function Shell() {
+  const { pathname } = useLocation()
+  const isAdmin = pathname === '/admin'
 
   return (
-    <BrowserRouter>
-      <CookieConsentProvider>
-      <ClosuresProvider>
+    <>
       <ScrollToTop />
-      <StatusBar />
-      <NavBar />
+      {!isAdmin && (
+        <>
+          <StatusBar />
+          <NavBar />
+        </>
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -47,10 +52,24 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
-      <BackToTop />
-      <CookieBanner />
-      </ClosuresProvider>
+      {!isAdmin && (
+        <>
+          <Footer />
+          <BackToTop />
+          <CookieBanner />
+        </>
+      )}
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <CookieConsentProvider>
+        <ClosuresProvider>
+          <Shell />
+        </ClosuresProvider>
       </CookieConsentProvider>
     </BrowserRouter>
   )
