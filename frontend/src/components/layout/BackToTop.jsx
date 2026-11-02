@@ -30,7 +30,7 @@ export default function BackToTop() {
       onClick={goTop}
       aria-label="Volver arriba"
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-white text-gray-600 shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:text-gray-900 hover:ring-gray-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark cursor-pointer ${
+      className={`fixed bottom-24 right-5 z-40 md:bottom-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-gray-600 shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:text-gray-900 hover:ring-gray-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark cursor-pointer ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
       }`}
     >
