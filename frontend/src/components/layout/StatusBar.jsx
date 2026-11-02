@@ -16,7 +16,7 @@ export default function StatusBar() {
   }, [])
 
   return (
-    <div className="bg-milele-gradient text-black">
+    <div className="border-b border-gray-200 bg-white text-gray-900">
       <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-2">
         <p role="status" className="flex min-w-0 items-center gap-2.5 text-sm">
           <span
@@ -26,7 +26,7 @@ export default function StatusBar() {
           <span className="min-w-0 leading-tight">
             <span className="font-semibold">{status.label}</span>
             {status.detail && (
-              <span className="block text-xs text-black/80 sm:inline sm:text-sm">
+              <span className="block text-xs text-gray-600 sm:inline sm:text-sm">
                 <span className="hidden sm:inline"> · </span>
                 {status.detail}
               </span>
