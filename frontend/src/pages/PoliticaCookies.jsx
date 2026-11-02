@@ -57,7 +57,7 @@ export default function PoliticaCookies() {
         solo se carga si usted acepta las cookies de terceros o pulsa «Ver mapa aquí»; hasta entonces no se
         establece ninguna conexión con los servidores de Google. Al cargarlo, Google recibe su dirección IP y
         puede guardar cookies en su dispositivo. Si prefiere no cargarlo, puede abrir la ubicación directamente
-        en Google Maps con el botón «Abrir en Google Maps».
+        en Google Maps con el botón «Cómo llegar».
       </p>
 
       <h2>4. Cómo gestionar su consentimiento</h2>
