@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router"
-import { MapPin, Phone, Mail, Instagram, Navigation } from "lucide-react"
-import InstagramIcon from "../icons/InstagramIcon"
+import { MapPin, Phone, Mail, Navigation } from "lucide-react"
 import { useCookieConsent } from "../../context/cookieConsentContext"
 import MapConsent from "../MapConsent"
 import fachada from "../../assets/images/fachada-milele.webp"
+import instagramLogo from "../../assets/images/instagram.webp"
 
 const MAPS_PLACE = "https://www.google.com/maps/search/?api=1&query=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
 const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
@@ -72,9 +72,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="flex items-center hover:text-milele-pink-dark transition-colors"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-cyan text-white mr-3">
-                      <Instagram className="h-4 w-4" />
-                    </div>
+                    <img src={instagramLogo} alt="" width="32" height="32" className="mr-3 h-8 w-8" />
                     <span className="text-sm">@centromilele</span>
                   </a>
                 </div>
@@ -150,7 +148,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-gray-900 px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-white/60"
                     >
-                      <InstagramIcon className="h-4 w-4" />
+                      <img src={instagramLogo} alt="" width="18" height="18" className="h-[18px] w-[18px]" />
                       @centromilele
                     </a>
                   </div>
