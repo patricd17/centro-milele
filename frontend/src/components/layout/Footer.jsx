@@ -7,15 +7,8 @@ import instagramLogo from "../../assets/images/instagram.webp"
 const MAPS_PLACE = "https://www.google.com/maps/search/?api=1&query=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
 const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lope+de+Rueda+78a%2C+29190+M%C3%A1laga"
 
-const LINKS = [
-  { to: "/", label: "Inicio" },
-  { to: "/about", label: "Quiénes somos" },
-  { to: "/spaces", label: "Nuestros espacios" },
-  { to: "/contact", label: "Contacto" },
-]
-
 // Los datos de contacto y la ubicación solo salen en inicio («Dónde estamos») y en la página de
-// contacto; en el resto de páginas el pie es una fila sencilla con enlaces e Instagram.
+// contacto; en el resto de páginas el pie solo lleva el Instagram. La navegación está en el menú.
 export default function Footer() {
   const { openSettings } = useCookieConsent()
   const { pathname } = useLocation()
@@ -100,14 +93,7 @@ export default function Footer() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-            <nav aria-label="Enlaces del pie" className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
-              {LINKS.map((link) => (
-                <Link key={link.to} to={link.to} className="hover:text-milele-pink-dark transition-colors">
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+          <div className="flex justify-center">
             <a
               href="https://www.instagram.com/centromilele"
               target="_blank"
