@@ -2,6 +2,6 @@
 const WHATSAPP_NUMBER = "34614438477"
 
 // Mensaje que aparece ya escrito al abrir el chat.
-const MESSAGE = "Hola, os escribo desde la web de Centro Milele. Quería pedir información."
+const MESSAGE = "Hola, quería pedir información sobre Centro Milele."
 
 export const whatsappLink = () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MESSAGE)}`
