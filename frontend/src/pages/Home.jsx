@@ -270,7 +270,7 @@ export default function Home() {
             <p className="mb-8 text-lg opacity-90">
               Contáctanos hoy mismo para programar tu primera consulta o resolver cualquier duda que tengas.
             </p>            <Link
-              to="/contact"
+              to="/contact#formulario"
               className="inline-flex items-center rounded-full bg-white px-8 py-4 text-sm font-medium text-gray-800 shadow-lg transition-all hover:shadow-xl hover:scale-105 milele-shadow"
             >
               Contactar ahora <ArrowRight className="ml-2 h-4 w-4" />

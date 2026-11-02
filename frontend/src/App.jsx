@@ -20,10 +20,19 @@ import CookieBanner from './components/CookieBanner'
 import CookieConsentProvider from './context/CookieConsentProvider'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (hash) {
+      // Con #ancla (por ejemplo /contact#formulario) se baja hasta esa sección.
+      const el = document.getElementById(decodeURIComponent(hash.slice(1)))
+      if (el) {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" })
+        return
+      }
+    }
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 
