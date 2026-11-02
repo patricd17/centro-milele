@@ -54,8 +54,10 @@ export default function PoliticaCookies() {
       </div>
       <p>
         Este sitio web no utiliza cookies de analítica, de publicidad ni de seguimiento. El mapa de Google Maps
-        solo se carga si usted acepta las cookies de terceros; hasta entonces no se establece ninguna conexión con
-        los servidores de Google.
+        solo se carga si usted acepta las cookies de terceros o pulsa «Ver mapa aquí»; hasta entonces no se
+        establece ninguna conexión con los servidores de Google. Al cargarlo, Google recibe su dirección IP y
+        puede guardar cookies en su dispositivo. Si prefiere no cargarlo, puede abrir la ubicación directamente
+        en Google Maps con el botón «Abrir en Google Maps».
       </p>
 
       <h2>4. Cómo gestionar su consentimiento</h2>

@@ -87,7 +87,11 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Teléfono</h3>
-                      <p className="text-gray-600">+34 614 438 477</p>
+                      <p>
+                        <a href="tel:+34614438477" className="text-gray-600 hover:text-milele-pink-dark transition-colors">
+                          +34 614 438 477
+                        </a>
+                      </p>
                     </div>
                   </div>
 
@@ -97,7 +101,14 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 font-serif mb-1">Email</h3>
-                      <p className="text-gray-600">centromilele@gmail.com</p>
+                      <p>
+                        <a
+                          href="mailto:centromilele@gmail.com?subject=Consulta%20desde%20la%20web"
+                          className="text-gray-600 hover:text-milele-pink-dark transition-colors"
+                        >
+                          centromilele@gmail.com
+                        </a>
+                      </p>
                     </div>
                   </div>
 
