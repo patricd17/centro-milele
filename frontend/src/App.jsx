@@ -11,6 +11,7 @@ import Professional from './pages/Professional'
 import AvisoLegal from './pages/AvisoLegal'
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad'
 import PoliticaCookies from './pages/PoliticaCookies'
+import NotFound from './pages/NotFound'
 import CookieBanner from './components/CookieBanner'
 import CookieConsentProvider from './context/CookieConsentProvider'
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <CookieBanner />
