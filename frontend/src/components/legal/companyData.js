@@ -6,5 +6,5 @@ export const COMPANY = {
   phone: "614438477",
   domain: "www.centromilele.es",
   nica: "67348",
-  registry: "Registro Mercantil de Málaga, hoja 189090",
+  registry: "Registro Mercantil de Málaga, hoja MA-189090",
 }
