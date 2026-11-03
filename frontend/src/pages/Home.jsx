@@ -7,9 +7,9 @@ import card_arcoiris from "../assets/images/card-arcoiris.webp"
 import card_mariposa from "../assets/images/card-mariposa.webp"
 
 const pasos = [
-  { titulo: "Primera cita", texto: "Conocemos a cada persona y a su familia, y vemos qué necesita." },
+  { titulo: "Primera cita", texto: "Te escuchamos y valoramos qué necesita cada persona." },
   { titulo: "Un plan a medida", texto: "Objetivos claros y sesiones adaptadas, con las tres áreas en continua comunicación." },
-  { titulo: "Seguimiento", texto: "Revisamos juntos cómo va y ajustamos el plan con la familia, que también participa en casa." },
+  { titulo: "Seguimiento", texto: "Revisamos juntos cómo evoluciona y ajustamos el plan cuando hace falta." },
 ]
 
 const areas = [
@@ -91,7 +91,7 @@ export default function Home() {
             Cómo trabajamos
           </Reveal>
           <Reveal as="p" className="mt-2 text-lg text-gray-600">
-            Tres pasos, siempre contigo y con tu familia.
+            Tres pasos, siempre a tu lado.
           </Reveal>
           <ol className="relative mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
             <span
