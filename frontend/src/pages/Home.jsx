@@ -114,7 +114,7 @@ export default function Home() {
               <Reveal as="li" key={paso.titulo} delay={i * 80} className="relative">
                 <span
                   aria-hidden="true"
-                  className="moontime-light relative flex h-20 w-20 items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac text-7xl leading-none text-gray-900"
+                  className="script-font relative flex h-20 w-20 items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac text-5xl font-semibold leading-none text-gray-900"
                 >
                   {i + 1}
                 </span>
