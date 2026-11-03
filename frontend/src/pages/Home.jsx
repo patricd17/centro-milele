@@ -158,10 +158,10 @@ export default function Home() {
       </section>
 
       {/* Frase */}
-      <section className="bg-[#10231a] py-16 text-center text-white md:py-20">
+      <section className="bg-milele-lilac py-16 text-center text-gray-900 md:py-20">
         <Reveal className="container mx-auto max-w-3xl px-4">
           <p className="font-serif text-3xl leading-snug md:text-4xl">Nos inspiramos en la pedagogía del amor</p>
-          <p className="mx-auto mt-4 max-w-xl text-white/80">
+          <p className="mx-auto mt-4 max-w-xl text-gray-700">
             Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada.
           </p>
         </Reveal>
@@ -185,23 +185,23 @@ export default function Home() {
       </section>
 
       {/* Contáctenos */}
-      <section className="bg-[#10231a] py-16 text-white md:py-20">
+      <section className="bg-milele-lilac py-16 text-gray-900 md:py-20">
         <div className="container mx-auto px-4">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-3xl font-semibold md:text-4xl">¿Listo para dar el primer paso?</h2>
-            <p className="mt-4 text-lg text-white/90">
+            <p className="mt-4 text-lg text-gray-800">
               Contáctanos hoy mismo para programar tu primera consulta o resolver cualquier duda que tengas.
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row">
               <Link
                 to="/contact#formulario"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
               >
                 Contactar ahora <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+34614438477"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white px-7 py-3 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/10 active:scale-[0.98]"
+                className="inline-flex items-center justify-center rounded-full border-2 border-gray-900 px-7 py-3 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-white/60 active:scale-[0.98]"
               >
                 Llamar · 614 438 477
               </a>
