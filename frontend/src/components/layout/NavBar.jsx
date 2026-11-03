@@ -8,6 +8,17 @@ import { whatsappLink } from "../../lib/whatsapp"
 import { getOpeningStatus } from "../../lib/openingHours"
 import { useClosures } from "../../context/closuresContext"
 
+// El logo lleva al inicio; si ya estás en el inicio, sube arriba del todo.
+function alPulsarLogo(pathname) {
+  return (e) => {
+    if (pathname === "/") {
+      e.preventDefault()
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" })
+    }
+  }
+}
+
 const LINKS = [
   { to: "/", label: "Inicio" },
   { to: "/about", label: "Quiénes somos" },
@@ -154,7 +165,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-milele-green/20 bg-white/95 shadow-sm backdrop-blur-sm">
       <div className="container mx-auto flex h-28 items-center justify-between px-4">
-        <Link to="/" className="group flex items-center">
+        <Link to="/" onClick={alPulsarLogo(pathname)} className="group flex items-center">
           <img
             src={logoMilele}
             alt="Milele Centro Multidisciplinar"
