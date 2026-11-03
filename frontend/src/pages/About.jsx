@@ -1,40 +1,12 @@
 import { Link } from "react-router"
 import { ArrowRight, Heart, Brain, Users } from "lucide-react"
-import patricia from "../assets/images/patricia1.webp"
-import silvia from "../assets/images/silvia2.webp"
-import lucia from "../assets/images/lucia2.webp"
-
-// Profesionales de Milele Centro Multidisciplinar
-const professionals = [
-  {
-    id: "patricia",
-    name: "Patricia García Díaz",
-    role: "Logopeda",
-    color: "purple",
-    description:
-      "Especialista en áreas claves como la Motricidad Orofacial, especialmente en el tratamiento de dficultades relacionadas con la deglución. Apasionada por ayudar a las personas a desarrollar su máximo potencial comunicativo.",
-    image: patricia,
-  },
-  {
-    id: "silvia",
-    name: "Silvia Cabello Domínguez",
-    role: "Psicóloga",
-    color: "blue",
-    description: "Psicóloga especialista en Atención Temprana y experta en Transtorno del Espectro Autista (TEA) asi como en Parálisis cerebral en AT. Comprometida con crear espacios seguros donde las personas puedan sanar y crecer emocionalmente.",
-    image: silvia,
-  },
-  {
-    id: "lucia",
-    name: "Lucía Miñagorri Bandera",
-    role: "Pedagoga Terapéutica",
-    color: "green",
-    description:
-      "Especialista en pedagogía terapéutica, especializada en escuela inclusiva y Disciplina positiva asi como en niños con Necesidades Educativas Especiales. Dedicada a crear estrategias de aprendizaje inclusivas y personalizadas.",
-    image: lucia,
-  },
-]
+import { useState } from "react"
+import { professionals } from "../data/professionals"
 
 export default function About() {
+  const areas = [...new Set(professionals.map((p) => p.area))]
+  const [area, setArea] = useState("Todas")
+  const visibles = area === "Todas" ? professionals : professionals.filter((p) => p.area === area)
   return (
     <>
       {/* Hero Section */}
@@ -46,7 +18,7 @@ export default function About() {
               <span className="script-font text-5xl md:text-6xl block mb-2 text-black">Quienes Somos</span>
             </h1>
             <p className="mb-8 text-lg md:text-xl text-black/90 max-w-3xl mx-auto">
-              En Milele, somos un equipo de tres profesionales apasionadas por el bienestar y desarrollo de las personas. Nos une el compromiso de ofrecer una atención integral y de calidad, creando un espacio donde cada persona se sienta comprendida, apoyada y acompañada en su proceso de crecimiento y superación. Nos inspiramos en la pedagogía del amor, acompañando a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada. Creemos que todos los seres humanos tienen un potencial único, y nuestro objetivo es ofrecer las herramientas necesarias para que puedan descubrirlo y desarrollarlo a su ritmo.
+              En Milele, somos un equipo de profesionales apasionadas por el bienestar y desarrollo de las personas. Nos une el compromiso de ofrecer una atención integral y de calidad, creando un espacio donde cada persona se sienta comprendida, apoyada y acompañada en su proceso de crecimiento y superación. Nos inspiramos en la pedagogía del amor, acompañando a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada. Creemos que todos los seres humanos tienen un potencial único, y nuestro objetivo es ofrecer las herramientas necesarias para que puedan descubrirlo y desarrollarlo a su ritmo.
             </p>
           </div>
         </div>
@@ -60,60 +32,59 @@ export default function About() {
               Nuestro <span className="gradient-text">Equipo</span> Multidisciplinar
             </h2>
             <p className="text-lg text-gray-600">
-              Cada miembro de nuestro equipo aporta su experiencia única para brindarte la mejor atención integral.
+              Cada una aporta su especialidad y su manera de trabajar. Elige a quien mejor encaje con lo que necesitas.
             </p>
-          </div>          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {professionals.map((professional) => {
-              const colorClasses = {
-                purple: {
-                  border: "border-purple-200",
-                  roleText: "text-purple-600",
-                  linkText: "text-purple-600 hover:text-purple-700",
-                  gradient: "from-purple-50 to-white"
-                },
-                blue: {
-                  border: "border-blue-200",
-                  roleText: "text-blue-600",
-                  linkText: "text-blue-600 hover:text-blue-700",
-                  gradient: "from-blue-50 to-white"
-                },
-                green: {
-                  border: "border-green-200",
-                  roleText: "text-green-600",
-                  linkText: "text-green-600 hover:text-green-700",
-                  gradient: "from-green-50 to-white"
-                }
-              }
+          </div>
 
-              const colors = colorClasses[professional.color] || colorClasses.green
-
-              return (
-                <div
-                  key={professional.id}
-                  className={`group overflow-hidden rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg milele-shadow hover:shadow-xl transition-all duration-300 border ${colors.border} flex flex-col`}
+          {professionals.length > 4 && (
+            <div className="mb-8 flex flex-wrap justify-center gap-2" role="group" aria-label="Filtrar por área">
+              {["Todas", ...areas].map((a) => (
+                <button
+                  key={a}
+                  type="button"
+                  onClick={() => setArea(a)}
+                  aria-pressed={area === a}
+                  className={`min-h-11 rounded-full border px-5 text-sm font-medium transition-colors ${
+                    area === a ? "border-gray-900 bg-gray-900 text-white" : "border-gray-300 bg-white text-gray-700 hover:border-gray-500"
+                  }`}
                 >
-                  <div className="relative w-full overflow-hidden flex-shrink-0">
-                    <img
-                      src={professional.image || "/placeholder.svg"}
-                      alt={professional.name}
-                      className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-                  </div>
-                  <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="mb-2 text-xl font-semibold font-serif text-gray-900">{professional.name}</h3>
-                    <p className={`mb-3 text-sm font-medium ${colors.roleText}`}>{professional.role}</p>
-                    <p className="mb-4 text-gray-600 text-sm leading-relaxed flex-grow">{professional.description}</p>
-                    <Link
-                      to={`/about/${professional.id}`}
-                      className={`inline-flex items-center text-sm font-medium ${colors.linkText} transition-colors mt-auto`}
-                    >
-                      Conocer más <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </div>
+                  {a}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {visibles.map((p) => (
+              <Link
+                key={p.id}
+                to={`/about/${p.id}`}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow hover:shadow-lg"
+              >
+                <img
+                  src={p.photoCard}
+                  alt={p.name}
+                  className="aspect-[4/5] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-serif text-xl font-semibold text-gray-900">{p.name}</h3>
+                  <p className="mt-1 text-sm text-gray-600">
+                    {p.role} · Col. {p.license}
+                  </p>
+                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                    {p.specialties.slice(0, 3).map((s) => (
+                      <li key={s} className="rounded-full bg-milele-cyan-light px-2.5 py-0.5 text-xs text-gray-800">
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 flex-grow text-sm italic leading-relaxed text-gray-700">«{p.quote}»</p>
+                  <span className="mt-5 inline-flex items-center text-sm font-semibold text-gray-900">
+                    Conocer más <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-              )
-            })}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -159,8 +130,7 @@ export default function About() {
               </div>
               <h3 className="mb-4 text-xl font-semibold font-serif text-gray-900">Colaboración</h3>
               <p className="text-gray-600">
-                Trabajamos en equipo, tanto internamente como con nuestros pacientes, para lograr los mejores
-                resultados.
+                Trabajamos en equipo, tanto internamente como con nuestros pacientes, para acompañar a cada familia.
               </p>
             </div>
           </div>
