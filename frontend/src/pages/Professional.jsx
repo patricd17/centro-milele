@@ -6,6 +6,14 @@ import Reveal from "../components/Reveal"
 const botonLila =
   "inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
 
+// Primera frase del bloque, como gancho cuando está cerrado
+const avance = (texto) => {
+  const frase = texto.match(/^.*?[.!?…](\s|$)/)?.[0].trim() ?? texto
+  if (frase.length <= 120) return frase
+  const corte = frase.slice(0, 117)
+  return corte.slice(0, corte.lastIndexOf(" ")).replace(/[,;:\s]+$/, "") + "…"
+}
+
 export default function Professional() {
   const { id } = useParams()
   const p = getProfessional(id)
@@ -54,10 +62,15 @@ export default function Professional() {
 
               <div className="mt-10 border-t border-gray-200">
                 {p.sections.map((sec) => (
-                  <details key={sec.title} open={sec.open} className="group border-b border-gray-200">
-                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-4 font-serif text-xl text-gray-900 [&::-webkit-details-marker]:hidden">
-                      {sec.title}
-                      <ChevronDown className="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180" />
+                  <details key={sec.title} name="perfil" open={sec.open} className="group border-b border-gray-200">
+                    <summary className="flex min-h-12 cursor-pointer list-none items-start justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
+                      <span>
+                        <span className="block font-serif text-xl text-gray-900">{sec.title}</span>
+                        <span className="mt-1 block text-sm italic text-gray-500 group-open:hidden">
+                          «{avance(sec.text[0])}»
+                        </span>
+                      </span>
+                      <ChevronDown className="mt-1.5 h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180" />
                     </summary>
                     <div className="space-y-4 pb-6 leading-relaxed text-gray-700">
                       {sec.text.map((par, i) => (

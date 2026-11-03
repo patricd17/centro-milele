@@ -32,7 +32,7 @@ export const professionals = [
     ],
     sections: [
       {
-        title: "Mi enfoque",
+        title: "Cómo trabajo",
         open: true,
         text: [
           "Me baso en la atención personalizada y en el trabajo multidisciplinar. Colaboro de cerca con otros profesionales para que el tratamiento se adapte a lo que necesita cada paciente.",
@@ -40,15 +40,10 @@ export const professionals = [
         ],
       },
       {
-        title: "Por qué elegí ser logopeda",
+        title: "Mi historia",
         text: [
           "Cada caso es único y me apasiona acompañar a los pacientes y a sus familias, con compromiso y empatía, que para mí son esenciales en la terapia.",
           "Ayudar a alguien a superar una barrera para comunicarse es de lo más gratificante que me ha pasado.",
-        ],
-      },
-      {
-        title: "Lo que me apasiona de mi trabajo",
-        text: [
           "Lo que más me emociona es esa primera palabra clara, esa frase completa o la sonrisa de alguien que consigue contar lo que siente. Cada avance, por pequeño que parezca, es una gran victoria que celebramos juntos.",
           "Y me encanta trabajar en equipo con el resto del centro: creo que es esencial para abordar cualquier dificultad de forma integral.",
         ],
@@ -84,15 +79,10 @@ export const professionals = [
     ],
     sections: [
       {
-        title: "Por qué elegí ser psicóloga sanitaria",
+        title: "Mi historia",
         open: true,
         text: [
           "Desde pequeña sentía una llamada natural a ayudar a los demás, y descubrí que la terapia es una de las formas más bonitas de acompañar a las personas en sus momentos más vulnerables.",
-        ],
-      },
-      {
-        title: "Mi historia",
-        text: [
           "Siempre me ha gustado ayudar y acompañar a los demás, tanto en sus desafíos como en sus fortalezas. Recuerdo con mucho cariño a una niña con necesidades especiales que estaba en mi clase de primaria. Durante esos años aprendimos mucho la una de la otra, y sin darnos cuenta ella me enseñó cariño, paciencia, comprensión y empatía.",
           "Con los cursos las materias se complicaron y tuve que esforzarme mucho. De hecho, no sabía qué estudiar. Una persona muy especial me llevó «a rastras» a hacer la selectividad y a elegir varias opciones (economía, psicología, trabajo social… sí, economía no tiene sentido ahí, lo sé, jajaja) y terminé entrando en psicología.",
           "Casi al final de la carrera me enamoré de la Atención Temprana gracias a la mujer que daba la asignatura, y volví a encontrarme con ese cariño y esa paciencia de primaria. Tras varios años trabajando hice el Máster en Atención Temprana, donde aprendí una barbaridad en las prácticas gracias a unas tutoras maravillosas. Allí me enamoré del TEA, y decidí especializarme aún más.",
@@ -136,7 +126,7 @@ export const professionals = [
     ],
     sections: [
       {
-        title: "Mi enfoque",
+        title: "Cómo trabajo",
         open: true,
         text: [
           "Me centro en la atención individualizada de cada niño y niña, creando una red de apoyo entre los distintos profesionales y las familias para abordar sus necesidades de forma integral.",
@@ -145,15 +135,10 @@ export const professionals = [
         ],
       },
       {
-        title: "¿Y por qué maestra?",
+        title: "Mi historia",
         text: [
           "Ser maestra no estaba en mis planes. De hecho, siempre me consideraron una estudiante de «fracaso escolar». Pero creo que ahí está la clave de todo: me he convertido en la maestra que necesité cuando era pequeña, alguien que sabe mirar más allá de una dificultad de aprendizaje, que prioriza las emociones y que acompaña para hacer el camino más sencillo.",
           "Estudié el Grado Superior de Integración Social y hice las prácticas en el Aula Hospitalaria del Materno Infantil de Málaga, con cuatro familias. No sé si ellos aún me recuerdan, pero para mí fueron los protagonistas de mi historia: Jose, Alejandra, Jesús y Kevin. Todos tenían enfermedades raras y graves. Jose me permitió lo más importante: acompañarle durante sus últimos años. Me enseñó el valor del tiempo, el arte de acompañar, a vivir el presente, a respetar el ritmo de cada alumno, el poder de ser diferentes y de luchar por los sueños. Me llenó la vida de colores. Él fue el motivo por el que quise ser maestra de Pedagogía Terapéutica.",
-        ],
-      },
-      {
-        title: "Lo que me apasiona de mi trabajo",
-        text: [
           "Cada familia y cada historia me han traído hasta Milele. Parte de mi personalidad alegre y paciente se la debo a ellos, porque me han enseñado a valorar cada logro y cada pequeño avance que conseguimos juntos.",
           "Lo que más valoro es ser un equipo con mis compañeras y con las familias, y seguir creciendo y formándome para ofrecer un servicio lo más completo posible y mejorar la calidad de vida de mis niños y niñas.",
         ],
