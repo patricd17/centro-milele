@@ -5,4 +5,5 @@ export const COMPANY = {
   email: "centromilele@gmail.com",
   phone: "614438477",
   domain: "www.centromilele.es",
+  nica: "67348",
 }
