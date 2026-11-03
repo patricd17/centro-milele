@@ -21,8 +21,6 @@ const areas = [
     fondo: "bg-milele-green-light/60",
     texto: "Lenguaje, habla, voz y deglución.",
     etiquetas: ["Habla", "Deglución", "Audición"],
-    profesional: "Patricia",
-    enlace: "/about/patricia",
   },
   {
     titulo: "Pedagogía",
@@ -32,8 +30,6 @@ const areas = [
     fondo: "bg-milele-cyan-light/60",
     texto: "Apoyo escolar y dificultades de aprendizaje.",
     etiquetas: ["Lectoescritura", "Atención", "Motivación"],
-    profesional: "Lucía",
-    enlace: "/about/lucia",
   },
   {
     titulo: "Psicología",
@@ -43,8 +39,6 @@ const areas = [
     fondo: "bg-milele-pink-light/60",
     texto: "Bienestar emocional y social, también con la familia.",
     etiquetas: ["Atención temprana", "TEA", "Emociones"],
-    profesional: "Silvia",
-    enlace: "/about/silvia",
   },
 ]
 
@@ -147,9 +141,6 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link to={area.enlace} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
-                    Conocer a {area.profesional} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
                 </div>
               </Reveal>
             ))}
