@@ -1,10 +1,58 @@
 import { Link } from "react-router"
-import { ArrowRight, ClipboardList, UserCheck, Target, CheckCircle } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import HeroVideo from "../components/HeroVideo"
 import Reveal from "../components/Reveal"
 import card_tulipan from "../assets/images/card-tulipan.webp"
 import card_arcoiris from "../assets/images/card-arcoiris.webp"
 import card_mariposa from "../assets/images/card-mariposa.webp"
+
+const pasos = [
+  { titulo: "Primera cita", texto: "Conocemos a cada persona y a su familia, y vemos qué necesita." },
+  { titulo: "Un plan a medida", texto: "Objetivos claros y sesiones adaptadas. Si hace falta, trabajamos las tres áreas a la vez." },
+  { titulo: "Seguimiento", texto: "Revisamos juntos cómo va y ajustamos el plan con la familia." },
+]
+
+const areas = [
+  {
+    titulo: "Logopedia",
+    sala: "Sala Tulipán",
+    foto: card_tulipan,
+    alt: "Sala Tulipán, donde trabaja la logopedia",
+    fondo: "bg-milele-green-light/60",
+    texto: "Lenguaje, habla, voz y deglución.",
+    etiquetas: ["Habla", "Deglución", "Audición"],
+    profesional: "Patricia",
+    enlace: "/about/patricia",
+  },
+  {
+    titulo: "Pedagogía",
+    sala: "Sala Arco Iris",
+    foto: card_arcoiris,
+    alt: "Sala Arco Iris, donde trabaja la pedagogía",
+    fondo: "bg-milele-cyan-light/60",
+    texto: "Apoyo escolar y dificultades de aprendizaje.",
+    etiquetas: ["Lectoescritura", "Atención", "Motivación"],
+    profesional: "Lucía",
+    enlace: "/about/lucia",
+  },
+  {
+    titulo: "Psicología",
+    sala: "Sala Mariposa",
+    foto: card_mariposa,
+    alt: "Sala Mariposa, donde trabaja la psicología",
+    fondo: "bg-milele-pink-light/60",
+    texto: "Bienestar emocional y social, también con la familia.",
+    etiquetas: ["Atención temprana", "TEA", "Emociones"],
+    profesional: "Silvia",
+    enlace: "/about/silvia",
+  },
+]
+
+const distintivos = [
+  { titulo: "Un equipo, un plan", texto: "Las tres áreas hablan entre sí. Nadie trabaja aislado." },
+  { titulo: "La familia, dentro", texto: "Orientación a madres y padres para seguir el trabajo en casa." },
+  { titulo: "Seguimiento continuo", texto: "Evaluamos de forma continua y ajustamos lo que haga falta." },
+]
 
 export default function Home() {
   return (
@@ -48,224 +96,90 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Metodología de trabajo */}
-      <section className="py-16 bg-milele-gradient-soft">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl text-center mb-16">
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl font-serif">
-              Nuestra <span className="gradient-text">Metodología</span> de Trabajo
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              En Centro Milele, ofrecemos un enfoque integral y personalizado para el tratamiento de nuestros pacientes, basado en la colaboración entre profesionales de diversas disciplinas: logopedia, pedagogía y psicología. Nuestro objetivo es abordar de manera conjunta las necesidades de cada individuo, promoviendo su desarrollo y bienestar desde una perspectiva global.
-            </p>
-          </div>          <div className="max-w-4xl mx-auto">
-            {/* Timeline */}
-            <div className="relative">
-              {/* Línea vertical central - oculta en móvil */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-milele-green via-milele-cyan to-milele-pink opacity-30 hidden lg:block"></div>
-
-              {/* Paso 1 */}
-              <div className="relative flex flex-col lg:flex-row items-center mb-16">
-                <div className="w-full lg:w-1/2 lg:pr-8 lg:text-right mb-8 lg:mb-0">
-                  <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg milele-shadow border border-milele-green/20">
-                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 font-serif">Evaluación Integral y Personalizada</h3>
-                    <p className="text-gray-600 mb-6">
-                      El primer paso en nuestra metodología es realizar una evaluación completa que permita conocer en profundidad las necesidades del paciente. Este proceso involucra:
-                    </p>
-                    <ul className="text-gray-600 space-y-3">
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-milele-green-dark mr-3 mt-0.5 flex-shrink-0" />
-                        <span>Entrevistas iniciales con los familiares o cuidadores, para obtener información sobre el historial del paciente, sus preocupaciones y objetivos.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-milele-green-dark mr-3 mt-0.5 flex-shrink-0" />
-                        <span>Valoración específica de cada área, utilizando herramientas y pruebas especializadas que permiten identificar cualquier dificultad o área que necesite atención.</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Círculo numerado */}
-                <div className="relative lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-16 h-16 bg-gradient-to-br from-milele-green to-milele-cyan rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg z-10 mb-8 lg:mb-0">
-                  <ClipboardList className="h-8 w-8" />
-                </div>
-
-                <div className="w-full lg:w-1/2 lg:pl-8">
-                  <div className="bg-gradient-to-br from-milele-green/10 to-milele-cyan/10 rounded-2xl p-6 lg:p-8 border border-milele-green/20">
-                    <div className="text-4xl lg:text-6xl font-bold text-milele-green-dark opacity-20 mb-4 font-serif">01</div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-milele-green-dark mb-2">Primer Paso</h4>
-                    <p className="text-gray-600">Conocimiento profundo del paciente y sus necesidades específicas</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Paso 2 */}
-              <div className="relative flex flex-col lg:flex-row items-center mb-16">
-                <div className="w-full lg:w-1/2 lg:pr-8 order-2 lg:order-1">
-                  <div className="bg-gradient-to-br from-milele-cyan/10 to-milele-pink/10 rounded-2xl p-6 lg:p-8 border border-milele-cyan/20">
-                    <div className="text-4xl lg:text-6xl font-bold text-milele-cyan-dark opacity-20 mb-4 font-serif">02</div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-milele-cyan-dark mb-2">Colaboración</h4>
-                    <p className="text-gray-600">Trabajo coordinado entre profesionales especializados</p>
-                  </div>
-                </div>
-
-                {/* Círculo numerado */}
-                <div className="relative lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-16 h-16 bg-gradient-to-br from-milele-cyan to-milele-pink rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg z-10 mb-8 lg:mb-0 order-1 lg:order-2">
-                  <UserCheck className="h-8 w-8" />
-                </div>
-
-                <div className="w-full lg:w-1/2 lg:pl-8 lg:text-left mb-8 lg:mb-0 order-3">
-                  <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg milele-shadow border border-milele-cyan/20">
-                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 font-serif">Trabajo Multidisciplinar</h3>
-                    <p className="text-gray-600">
-                      Contamos con un equipo profesional altamente cualificado que trabajan de forma coordinada para ofrecer un tratamiento personalizado y efectivo. Nos reunimos periódicamente para compartir avances y ajustar las intervenciones, garantizando que cada paciente reciba el mejor tratamiento en todas las áreas involucradas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Paso 3 */}
-              <div className="relative flex flex-col lg:flex-row items-center">
-                <div className="w-full lg:w-1/2 lg:pr-8 lg:text-right mb-8 lg:mb-0">
-                  <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg milele-shadow border border-milele-pink/20">
-                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 font-serif">Plan de Intervención Personalizado</h3>
-                    <p className="text-gray-600 mb-6">
-                      Una vez realizada la evaluación, diseñamos un plan de intervención individualizado que incluye:
-                    </p>
-                    <ul className="text-gray-600 space-y-3">
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-milele-pink-dark mr-3 mt-0.5 flex-shrink-0" />
-                        <span>Objetivos específicos para cada disciplina.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-milele-pink-dark mr-3 mt-0.5 flex-shrink-0" />
-                        <span>Técnicas y herramientas adaptadas a cada área, utilizando métodos basados en la evidencia científica y ajustados a la edad y situación del paciente.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-milele-pink-dark mr-3 mt-0.5 flex-shrink-0" />
-                        <span>Planificación de sesiones de intervención, donde cada profesional lleva a cabo su trabajo de forma complementaria maximizando resultados.</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Círculo numerado */}
-                <div className="relative lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-16 h-16 bg-gradient-to-br from-milele-pink to-milele-green rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg z-10 mb-8 lg:mb-0">
-                  <Target className="h-8 w-8" />
-                </div>
-
-                <div className="w-full lg:w-1/2 lg:pl-8">
-                  <div className="bg-gradient-to-br from-milele-pink/10 to-milele-green/10 rounded-2xl p-6 lg:p-8 border border-milele-pink/20">
-                    <div className="text-4xl lg:text-6xl font-bold text-milele-pink-dark opacity-20 mb-4 font-serif">03</div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-milele-pink-dark mb-2">Implementación</h4>
-                    <p className="text-gray-600">Plan personalizado con objetivos específicos y seguimiento continuo</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>      {/* Qué ofrecemos */}
+      {/* Cómo trabajamos */}
       <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <Reveal as="h2" className="font-serif text-3xl font-semibold text-gray-900 md:text-4xl">
+            Cómo trabajamos
+          </Reveal>
+          <Reveal as="p" className="mt-2 text-lg text-gray-600">
+            Tres pasos, siempre contigo y con tu familia.
+          </Reveal>
+          <ol className="relative mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
+            <span
+              aria-hidden="true"
+              className="absolute left-20 right-[33%] top-10 hidden border-t-2 border-dashed border-milele-lilac-line md:block"
+            />
+            {pasos.map((paso, i) => (
+              <Reveal as="li" key={paso.titulo} delay={i * 80} className="relative">
+                <span
+                  aria-hidden="true"
+                  className="moontime-light relative flex h-20 w-20 items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac text-7xl leading-none text-gray-900"
+                >
+                  {i + 1}
+                </span>
+                <h3 className="mt-5 font-serif text-xl font-semibold text-gray-900">{paso.titulo}</h3>
+                <p className="mt-2 max-w-xs leading-relaxed text-gray-700">{paso.texto}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Qué ofrecemos */}
+      <section className="bg-[#f4fbf3] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Reveal as="h2" className="mb-10 font-serif text-3xl font-semibold text-gray-900 md:mb-14 md:text-4xl">
             Qué ofrecemos
           </Reveal>
           <div className="grid gap-5 md:grid-cols-3">
-            <Reveal delay={0} className="flex flex-col overflow-hidden rounded-2xl bg-milele-green-light/60">
-              <img
-                src={card_tulipan}
-                alt="Sala Tulipán, donde trabaja la logopedia"
-                width="640"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-2xl font-semibold text-gray-900">Logopedia</h3>
-                <p className="mt-1 text-sm text-gray-600">Sala Tulipán</p>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
-                  Se enfoca en el desarrollo del lenguaje y la comunicación, abordando problemas como trastornos del habla, deglución, audición, y otros aspectos relacionados con la comunicación verbal y no verbal.
-                </p>
-                <Link to="/about/patricia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
-                  Conocer a Patricia <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </Reveal>
-            <Reveal delay={80} className="flex flex-col overflow-hidden rounded-2xl bg-milele-cyan-light/60">
-              <img
-                src={card_arcoiris}
-                alt="Sala Arco Iris, donde trabaja la pedagogía terapéutica"
-                width="640"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-2xl font-semibold text-gray-900">Pedagogía</h3>
-                <p className="mt-1 text-sm text-gray-600">Sala Arco Iris</p>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
-                  Nos centramos en el apoyo escolar para las dificultades de aprendizaje (lectura, escritura, cálculo), bajo rendimiento, falta de motivación y autonomía, problemas en la organización, dificultades socioemocionales, en el desarrollo de habilidades cognitivas.
-                </p>
-                <Link to="/about/lucia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
-                  Conocer a Lucía <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </Reveal>
-            <Reveal delay={160} className="flex flex-col overflow-hidden rounded-2xl bg-milele-pink-light">
-              <img
-                src={card_mariposa}
-                alt="Sala Mariposa, donde trabaja la psicología"
-                width="640"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-2xl font-semibold text-gray-900">Psicología</h3>
-                <p className="mt-1 text-sm text-gray-600">Sala Mariposa</p>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-gray-800">
-                  Trabajamos con técnicas de intervención que promueven el bienestar psicológico, emocional, y social de la persona y su entorno atendiendo a sus necesidades específicas y mejorando su calidad de vida.
-                </p>
-                <Link to="/about/silvia" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
-                  Conocer a Silvia <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            <Reveal delay={0}>
-              <h3 className="font-serif text-xl font-semibold text-gray-900">Seguimiento y Evaluación Continua</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">El proceso terapéutico en Milele no termina con las sesiones individuales. Llevamos a cabo un seguimiento constante para evaluar la evolución del paciente y realizar ajustes en el plan de intervención según sea necesario.</p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h3 className="font-serif text-xl font-semibold text-gray-900">Colaboración con Familia y Profesionales</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">En nuestro enfoque, es crucial para el éxito de la terapia. Ofrecemos orientación y apoyo a los familiares, con el objetivo de fomentar la continuidad de la intervención fuera del centro.</p>
-            </Reveal>
-            <Reveal delay={160}>
-              <h3 className="font-serif text-xl font-semibold text-gray-900">Enfoque de Prevención y Educación</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-gray-700">Nos importa no solo tratar las dificultades actuales, sino también prevenir futuras complicaciones. Organizamos talleres, charlas y actividades que fomentan el desarrollo continuo en áreas clave de la salud emocional, cognitiva y comunicativa.</p>
-            </Reveal>
+            {areas.map((area, i) => (
+              <Reveal key={area.titulo} delay={i * 80} className={`flex flex-col overflow-hidden rounded-2xl ${area.fondo}`}>
+                <img src={area.foto} alt={area.alt} width="640" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-serif text-2xl font-semibold text-gray-900">{area.titulo}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{area.sala}</p>
+                  <p className="mt-4 text-[15px] leading-relaxed text-gray-800">{area.texto}</p>
+                  <ul className="mt-3 flex flex-1 flex-wrap content-start gap-1.5">
+                    {area.etiquetas.map((e) => (
+                      <li key={e} className="h-fit rounded-full bg-white/70 px-2.5 py-0.5 text-xs text-gray-800">
+                        {e}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to={area.enlace} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
+                    Conocer a {area.profesional} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Por qué elegirnos */}
-      <section className="bg-[#f4fbf3] py-16 md:py-24">
+      {/* Frase */}
+      <section className="bg-[#10231a] py-16 text-center text-white md:py-20">
+        <Reveal className="container mx-auto max-w-3xl px-4">
+          <p className="font-serif text-3xl leading-snug md:text-4xl">Nos inspiramos en la pedagogía del amor</p>
+          <p className="mx-auto mt-4 max-w-xl text-white/80">
+            Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* Lo que nos distingue */}
+      <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Reveal as="h2" className="font-serif text-3xl font-semibold text-gray-900 md:text-4xl">
-            ¿Por qué Milele?
+            Lo que nos distingue
           </Reveal>
           <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-3 md:gap-12">
-            <Reveal delay={0}>
-              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Equipo Multidisciplinar</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Equipo multidisciplinar altamente cualificado y en constante formación con un enfoque personalizado para cada paciente y un tratamiento único y adaptado.</p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Compromiso Integral</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Compromiso con el bienestar integral de cada individuo, atendiendo todas sus necesidades.</p>
-            </Reveal>
-            <Reveal delay={160}>
-              <h3 className="font-serif text-2xl font-medium leading-tight text-gray-900 md:text-[28px]">Seguimiento Constante</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-gray-700">Seguimiento constante para asegurar el éxito y la evolución positiva del tratamiento.</p>
-            </Reveal>
+            {distintivos.map((d, i) => (
+              <Reveal key={d.titulo} delay={i * 80} className="border-t-2 border-gray-900 pt-4">
+                <h3 className="font-serif text-2xl font-medium text-gray-900">{d.titulo}</h3>
+                <p className="mt-2 leading-relaxed text-gray-700">{d.texto}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
