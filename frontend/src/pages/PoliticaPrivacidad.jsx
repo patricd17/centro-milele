@@ -100,6 +100,14 @@ export default function PoliticaPrivacidad() {
           <strong>EmailJS</strong>: servicio de envío de correo electrónico mediante el que se nos hace llegar el
           contenido del formulario.
         </li>
+        <li>
+          <strong>Google (Gmail)</strong>: recepción del correo electrónico con el contenido del formulario en la
+          cuenta de correo del centro.
+        </li>
+        <li>
+          <strong>Vercel</strong>: alojamiento de la página web. Recibe datos técnicos de la visita, como la dirección
+          IP, necesarios para mostrar el sitio.
+        </li>
         <li>Organismos y entidades oficiales, en cumplimiento de las normativas y leyes vigentes.</li>
       </ul>
       <p>
