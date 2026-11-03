@@ -7,9 +7,9 @@ import card_arcoiris from "../assets/images/card-arcoiris.webp"
 import card_mariposa from "../assets/images/card-mariposa.webp"
 
 const pasos = [
-  { titulo: "Primera cita", texto: "Conocemos a cada persona y a su familia, y vemos qué necesita." },
-  { titulo: "Un plan a medida", texto: "Objetivos claros y sesiones adaptadas. Si hace falta, trabajamos las tres áreas a la vez." },
-  { titulo: "Seguimiento", texto: "Revisamos juntos cómo va y ajustamos el plan con la familia." },
+  { titulo: "Primera cita", texto: "Te escuchamos y valoramos qué necesita cada persona." },
+  { titulo: "Un plan a medida", texto: "Objetivos claros y sesiones adaptadas, con las tres áreas en continua comunicación." },
+  { titulo: "Seguimiento", texto: "Revisamos juntos cómo evoluciona y ajustamos el plan cuando hace falta." },
 ]
 
 const areas = [
@@ -21,8 +21,6 @@ const areas = [
     fondo: "bg-milele-green-light/60",
     texto: "Lenguaje, habla, voz y deglución.",
     etiquetas: ["Habla", "Deglución", "Audición"],
-    profesional: "Patricia",
-    enlace: "/about/patricia",
   },
   {
     titulo: "Pedagogía",
@@ -32,8 +30,6 @@ const areas = [
     fondo: "bg-milele-cyan-light/60",
     texto: "Apoyo escolar y dificultades de aprendizaje.",
     etiquetas: ["Lectoescritura", "Atención", "Motivación"],
-    profesional: "Lucía",
-    enlace: "/about/lucia",
   },
   {
     titulo: "Psicología",
@@ -43,15 +39,7 @@ const areas = [
     fondo: "bg-milele-pink-light/60",
     texto: "Bienestar emocional y social, también con la familia.",
     etiquetas: ["Atención temprana", "TEA", "Emociones"],
-    profesional: "Silvia",
-    enlace: "/about/silvia",
   },
-]
-
-const distintivos = [
-  { titulo: "Un equipo, un plan", texto: "Las tres áreas hablan entre sí. Nadie trabaja aislado." },
-  { titulo: "La familia, dentro", texto: "Orientación a madres y padres para seguir el trabajo en casa." },
-  { titulo: "Seguimiento continuo", texto: "Evaluamos de forma continua y ajustamos lo que haga falta." },
 ]
 
 export default function Home() {
@@ -103,7 +91,7 @@ export default function Home() {
             Cómo trabajamos
           </Reveal>
           <Reveal as="p" className="mt-2 text-lg text-gray-600">
-            Tres pasos, siempre contigo y con tu familia.
+            Tres pasos, siempre a tu lado.
           </Reveal>
           <ol className="relative mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
             <span
@@ -147,9 +135,6 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link to={area.enlace} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-milele-cyan-dark">
-                    Conocer a {area.profesional} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
                 </div>
               </Reveal>
             ))}
@@ -165,23 +150,6 @@ export default function Home() {
             Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada.
           </p>
         </Reveal>
-      </section>
-
-      {/* Lo que nos distingue */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <Reveal as="h2" className="font-serif text-3xl font-semibold text-gray-900 md:text-4xl">
-            Lo que nos distingue
-          </Reveal>
-          <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-3 md:gap-12">
-            {distintivos.map((d, i) => (
-              <Reveal key={d.titulo} delay={i * 80} className="border-t-2 border-gray-900 pt-4">
-                <h3 className="font-serif text-2xl font-medium text-gray-900">{d.titulo}</h3>
-                <p className="mt-2 leading-relaxed text-gray-700">{d.texto}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Contáctenos */}
