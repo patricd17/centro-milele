@@ -22,6 +22,7 @@ export default function AvisoLegal() {
         <li>NIF: {COMPANY.nif}</li>
         <li>Domicilio social: {COMPANY.address}</li>
         <li>Teléfono: {COMPANY.phone}</li>
+        <li>Centro sanitario autorizado, NICA {COMPANY.nica}</li>
         <li>
           E-mail: <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
         </li>

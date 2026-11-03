@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-milele-gradient opacity-5"></div>
       <div className="container mx-auto px-4 relative">
-        {isHome && <DondeEstamos />}
+        {isHome && <DondeEstamos compact />}
 
         <div className={`border-t border-milele-green/20 pb-44 pt-6 text-center text-sm text-gray-600 md:pb-6 ${isHome ? "mt-8" : ""}`}>
           <nav className="mb-2 flex flex-wrap justify-center gap-x-4">
