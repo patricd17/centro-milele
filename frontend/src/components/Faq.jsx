@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import { ChevronDown, Phone } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 // Respuestas basadas en lo que ya dice la web. Para añadir una pregunta, copiar un elemento de la lista.
 const PREGUNTAS = [
@@ -41,12 +41,6 @@ export default function Faq() {
           <p className="mt-4 leading-relaxed text-gray-600">
             ¿No encuentras tu duda? Llámanos o escríbenos y te respondemos encantadas.
           </p>
-          <a
-            href="tel:+34614438477"
-            className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-6 py-3 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
-          >
-            <Phone className="h-5 w-5" aria-hidden="true" /> Llamar · 614 438 477
-          </a>
         </div>
 
         <div className="border-t border-gray-300">
