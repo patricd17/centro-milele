@@ -27,3 +27,7 @@ jobs:
           # Valores de relleno solo para compilar: la web real usa los suyos en Vercel.
           VITE_SUPABASE_URL: https://ejemplo.supabase.co
           VITE_SUPABASE_ANON_KEY: clave-de-ejemplo
+      # Pruebas de las páginas: abren sin errores, la cabecera queda fija, el formulario valida y envía,
+      # y la política de seguridad no bloquea nada.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e

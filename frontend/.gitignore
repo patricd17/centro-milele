@@ -25,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Resultados de las pruebas de páginas
+test-results/
+playwright-report/
