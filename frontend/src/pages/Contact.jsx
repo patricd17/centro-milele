@@ -153,13 +153,11 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
-                <div className="-mt-3 space-y-1 text-xs text-gray-500">
-                  <p>
-                    Por favor, no incluyas datos de salud ni informes en este mensaje. Te los solicitaremos de forma
-                    segura cuando concertemos la cita.
-                  </p>
-                  <p>Si estás escribiendo en nombre de un menor de edad, hazlo como madre, padre o tutor legal.</p>
-                </div>
+                <p className="-mt-3 text-xs text-gray-500">
+                  Por favor, no incluyas datos de salud ni informes en este mensaje. Te los solicitaremos de forma
+                  segura cuando concertemos la cita. Si estás escribiendo en nombre de un menor de edad, hazlo como
+                  madre, padre o tutor legal.
+                </p>
 
                 {/* Campo trampa: oculto para las personas */}
                 <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
