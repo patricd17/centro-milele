@@ -150,21 +150,9 @@ export default function Home() {
       <section className="bg-white py-14 md:py-20">
         <Reveal className="container mx-auto max-w-3xl px-4 text-center">
           <p className="text-balance font-serif text-3xl leading-snug text-gray-900 md:text-4xl">Nos inspiramos en la pedagogía del amor.</p>
-          <p className="mt-4 text-lg text-gray-600">Si quieres saber más o pedir cita, escríbenos o llámanos.</p>
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row">
-            <Link
-              to="/contact#formulario"
-              className="inline-flex items-center justify-center rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
-            >
-              Pedir cita
-            </Link>
-            <a
-              href="tel:+34614438477"
-              className="inline-flex items-center justify-center rounded-full border-2 border-gray-900 px-7 py-3 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-gray-50 active:scale-[0.98]"
-            >
-              Llamar · 614 438 477
-            </a>
-          </div>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-gray-600">
+            Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada.
+          </p>
         </Reveal>
       </section>
     </>
