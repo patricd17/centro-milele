@@ -10,7 +10,7 @@ const DOT_COLORS = {
 export default function StatusBarView({ status, notice }) {
   return (
     <div className="bg-gray-50 text-gray-900">
-      <div className="container mx-auto flex min-h-11 items-center justify-between gap-4 px-4 py-1.5">
+      <div className="container mx-auto flex min-h-11 items-center justify-between gap-4 px-4 py-1.5 md:min-h-9 md:py-1">
         <p role="status" className="flex min-w-0 items-center gap-2.5 text-[13px] sm:text-sm">
           <span aria-hidden="true" className="relative flex h-2.5 w-2.5 flex-shrink-0">
             {status.state === "open" && (

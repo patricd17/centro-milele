@@ -50,15 +50,15 @@ export default function Home() {
         description="Centro multidisciplinar en Puerto de la Torre (Málaga): logopedia, pedagogía terapéutica y psicología. Equipo de tres profesionales colegiadas. Pide cita."
       />
       {/* Portada */}
-      <section className="relative overflow-hidden bg-[#f4fbf3] py-12 md:py-20">
+      <section className="relative overflow-hidden bg-[#f4fbf3] py-8 md:py-14">
         <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="mx-auto grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div className="text-center lg:text-left">
-              <h1 className="font-serif text-4xl font-semibold leading-tight text-gray-900 md:text-5xl">
-                <span className="moontime-light mb-2 block text-6xl font-normal md:text-8xl">Milele</span>
+              <h1 className="font-serif text-[2rem] font-semibold leading-tight text-gray-900 md:text-[2.5rem]">
+                <span className="moontime-light mb-2 block text-5xl font-normal md:text-7xl">Milele</span>
                 Para siempre
               </h1>
-              <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-gray-800 lg:mx-0">
+              <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-gray-800 md:mt-6 md:text-lg lg:mx-0">
                 En Milele, cada persona es única, y por eso nos esforzamos en ofrecer soluciones terapéuticas que se ajusten a sus necesidades.
               </p>
               <p className="mx-auto mt-3 max-w-lg text-base text-gray-600 lg:mx-0">
@@ -80,7 +80,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md">
+              <div className="w-full max-w-sm">
                 <HeroVideo className="h-auto w-full rounded-2xl object-contain" />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Cómo trabajamos */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-12 md:py-20">
         <div className="container mx-auto px-4">
           <Reveal as="h2" className="font-serif text-3xl font-semibold text-gray-900 md:text-4xl">
             Cómo trabajamos
@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* Qué ofrecemos */}
-      <section className="bg-[#f4fbf3] py-16 md:py-24">
+      <section className="bg-[#f4fbf3] py-12 md:py-20">
         <div className="container mx-auto px-4">
           <Reveal as="h2" className="mb-10 font-serif text-3xl font-semibold text-gray-900 md:mb-14 md:text-4xl">
             Qué ofrecemos
