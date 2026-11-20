@@ -2,6 +2,7 @@ import { Link } from "react-router"
 import { ArrowRight, Heart, Brain, Users } from "lucide-react"
 import { useState } from "react"
 import { professionals } from "../data/professionals"
+import Seo from "../components/Seo"
 
 export default function About() {
   const areas = [...new Set(professionals.map((p) => p.area))]
@@ -9,6 +10,10 @@ export default function About() {
   const visibles = area === "Todas" ? professionals : professionals.filter((p) => p.area === area)
   return (
     <>
+      <Seo
+        title="Quiénes somos · Milele Centro Multidisciplinar, Málaga"
+        description={`Conoce al equipo de Milele: ${professionals.map((p) => `${p.firstName}, ${p.role.toLowerCase()}`).join("; ")}. Puerto de la Torre (Málaga).`}
+      />
       {/* Hero Section */}
       <section className="relative bg-milele-gradient py-20 text-black overflow-hidden">
         <div className="absolute inset-0 bg-white/10"></div>

@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
+import { Send, MessageCircle, Phone, PenLine, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
 import MapConsent from "../components/MapConsent"
 import DondeEstamos from "../components/DondeEstamos"
+import Seo from "../components/Seo"
+import PageHeader from "../components/PageHeader"
+import WhatsAppIcon from "../components/icons/WhatsAppIcon"
+import { whatsappLink } from "../lib/whatsapp"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -47,36 +51,48 @@ export default function Contact() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-milele-gradient py-20 text-black overflow-hidden">
-        <div className="absolute inset-0 bg-white/10"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-4xl font-bold md:text-5xl font-serif text-black">
-              <span className="script-font text-5xl md:text-6xl block mb-2 text-black">Contacto</span>
-            </h1>
-            <p className="mb-8 text-lg md:text-xl text-black/90 max-w-3xl mx-auto">
-              Estamos aquí para ayudarte. Ponte en contacto con nosotras para programar una cita o resolver cualquier
-              duda que tengas sobre nuestros servicios.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Seo
+        title="Contacto y cómo llegar · Milele Centro Multidisciplinar, Málaga"
+        description="Pide cita en Milele: calle Lope de Rueda 78 A, Puerto de la Torre (Málaga). Tardes de 16:00 a 20:00 y mañanas con cita previa. Tel. 614 438 477."
+      />
+      <PageHeader title="Contacto">Elige cómo prefieres hablar con nosotras. Las mañanas son solo con cita previa.</PageHeader>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-milele-gradient-soft">
+      <section className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="mx-auto mb-10 grid max-w-6xl gap-3 md:mb-14 md:grid-cols-2">
+            <a
+              href="tel:+34614438477"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
+            >
+              <Phone className="h-5 w-5" aria-hidden="true" /> Llamar · 614 438 477
+            </a>
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98] md:hidden"
+            >
+              <WhatsAppIcon className="h-5 w-5" /> Escribir por WhatsApp
+            </a>
+            <a
+              href="#formulario"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
+            >
+              <PenLine className="h-5 w-5" aria-hidden="true" /> Escribir un mensaje
+            </a>
+          </div>
+
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-12">
             {/* Dónde estamos: dirección, horario, teléfono y correo en un único bloque */}
             <DondeEstamos variant="card" photo="frontal" className="order-2 lg:order-1" />
 
             {/* Contact Form */}
-            <div id="formulario" className="order-1 lg:order-2 scroll-mt-36 bg-white p-8 rounded-2xl shadow-xl milele-shadow border border-milele-pink/10">
+            <div id="formulario" className="order-1 lg:order-2 scroll-mt-36 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
               <div className="flex items-center mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-milele-pink to-milele-green text-white mr-4">
+                <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac text-gray-900">
                   <MessageCircle className="h-6 w-6" />
                 </div>
-                <h2 className="text-2xl font-semibold font-serif text-gray-900">Envíanos un Mensaje</h2>
+                <h2 className="text-2xl font-semibold font-serif text-gray-900">Cuéntanos qué necesitas</h2>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -209,7 +225,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center rounded-xl bg-milele-gradient px-8 py-4 text-sm font-medium text-black shadow-lg transition-all hover:shadow-xl hover:scale-105 milele-shadow disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-gray-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
@@ -220,7 +236,7 @@ export default function Contact() {
           </div>
 
           {/* Mapa (se carga solo al pulsar «Ver mapa aquí») */}
-          <div className="mt-12 rounded-2xl border border-milele-cyan/10 bg-white p-6 shadow-lg milele-shadow md:p-8">
+          <div className="mx-auto mt-12 max-w-6xl rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-semibold font-serif text-gray-900">Encuéntranos en el mapa</h2>
             <MapConsent className="h-80" />
           </div>

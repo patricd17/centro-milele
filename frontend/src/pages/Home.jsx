@@ -1,6 +1,7 @@
 import { Link } from "react-router"
 import HeroVideo from "../components/HeroVideo"
 import Reveal from "../components/Reveal"
+import Seo from "../components/Seo"
 import card_tulipan from "../assets/images/card-tulipan.webp"
 import card_arcoiris from "../assets/images/card-arcoiris.webp"
 import card_mariposa from "../assets/images/card-mariposa.webp"
@@ -44,6 +45,10 @@ const areas = [
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Milele · Logopedia, pedagogía y psicología en Puerto de la Torre, Málaga"
+        description="Centro multidisciplinar en Puerto de la Torre (Málaga): logopedia, pedagogía terapéutica y psicología. Equipo de tres profesionales colegiadas. Pide cita."
+      />
       {/* Portada */}
       <section className="relative overflow-hidden bg-[#f4fbf3] py-12 md:py-20">
         <div className="container mx-auto px-4">
