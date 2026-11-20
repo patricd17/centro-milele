@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { Cookie } from "lucide-react"
 import { useCookieConsent } from "../context/cookieConsentContext"
 
 function SettingsPanel() {
@@ -50,7 +49,7 @@ function SettingsPanel() {
           <button
             type="button"
             onClick={closeSettings}
-            className="rounded-xl border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+            className="inline-flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-gray-300 px-6 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 sm:flex-none"
           >
             Cancelar
           </button>
@@ -58,7 +57,7 @@ function SettingsPanel() {
         <button
           type="button"
           onClick={() => save(thirdParty)}
-          className="rounded-xl bg-milele-gradient px-5 py-2.5 text-sm font-medium text-black shadow hover:shadow-lg transition-shadow cursor-pointer"
+          className="inline-flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-6 py-2.5 text-sm font-semibold text-gray-900 transition-all hover:bg-milele-lilac-dark active:scale-[0.98] sm:min-w-[8.5rem] sm:flex-none"
         >
           Guardar preferencias
         </button>
@@ -83,43 +82,34 @@ export default function CookieBanner() {
           : "fixed inset-x-0 bottom-0 z-[100] p-4"
       }
     >
-      <div className="mx-auto w-full max-w-3xl rounded-2xl border border-milele-green/30 bg-white p-6 shadow-2xl">
+      <div className="mx-auto w-full max-w-3xl rounded-2xl border border-gray-200 bg-white p-5 shadow-2xl md:p-6">
         {settingsOpen ? (
           <SettingsPanel />
         ) : (
-          <div className="flex flex-col gap-4 md:flex-row md:items-center">
-            <div className="flex flex-1 items-start gap-3">
-              <Cookie className="mt-0.5 h-6 w-6 flex-shrink-0 text-milele-cyan-dark" />
-              <p className="text-sm text-gray-700">
-                Usamos cookies de terceros (Google Maps) para mostrarte el mapa de nuestra ubicación. Puedes
-                aceptarlas, rechazarlas o configurarlas. Más información en nuestra{" "}
-                <Link to="/politica-de-cookies" className="font-medium text-milele-cyan-dark underline">
-                  Política de cookies
-                </Link>
-                .
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 sm:flex-row md:flex-shrink-0">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <p className="flex-1 text-sm leading-relaxed text-gray-700">
+              Usamos cookies de terceros (Google Maps) solo para mostrarte el mapa de nuestra ubicación. Puedes aceptarlas o
+              rechazarlas con la misma facilidad. Más información en la{" "}
+              <Link to="/politica-de-cookies" className="font-semibold text-gray-900 underline underline-offset-4">
+                Política de cookies
+              </Link>
+              .
+            </p>
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center md:flex-shrink-0">
+              <div className="flex gap-3 sm:order-2">
+                <button type="button" onClick={rejectAll} className="inline-flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-6 py-2.5 text-sm font-semibold text-gray-900 transition-all hover:bg-milele-lilac-dark active:scale-[0.98] sm:min-w-[8.5rem] sm:flex-none">
+                  Rechazar
+                </button>
+                <button type="button" onClick={acceptAll} className="inline-flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-6 py-2.5 text-sm font-semibold text-gray-900 transition-all hover:bg-milele-lilac-dark active:scale-[0.98] sm:min-w-[8.5rem] sm:flex-none">
+                  Aceptar
+                </button>
+              </div>
               <button
                 type="button"
                 onClick={openSettings}
-                className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+                className="min-h-11 cursor-pointer px-2 text-sm font-medium text-gray-900 underline underline-offset-4 sm:order-1"
               >
                 Configurar
-              </button>
-              <button
-                type="button"
-                onClick={rejectAll}
-                className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
-              >
-                Rechazar
-              </button>
-              <button
-                type="button"
-                onClick={acceptAll}
-                className="rounded-xl bg-milele-gradient px-4 py-2.5 text-sm font-medium text-black shadow hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                Aceptar todas
               </button>
             </div>
           </div>

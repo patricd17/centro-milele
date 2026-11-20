@@ -4,41 +4,53 @@ import Seo from "../components/Seo"
 import PageHeader from "../components/PageHeader"
 import ImageModal from "../components/ImageModal"
 import recepcion from "../assets/images/recepcion.webp"
+import recepcionMini from "../assets/images/recepcion-mini.webp"
 import Salaarcoiris from "../assets/images/Salaarcoiris.webp"
+import SalaarcoirisMini from "../assets/images/Salaarcoiris-mini.webp"
 import Salamariposa from "../assets/images/Salamariposa.webp"
+import SalamariposaMini from "../assets/images/Salamariposa-mini.webp"
 import Salatulipan from "../assets/images/Salatulipan.webp"
+import SalatulipanMini from "../assets/images/Salatulipan-mini.webp"
 import Salauniverso from "../assets/images/Salauniverso.webp"
+import SalauniversoMini from "../assets/images/Salauniverso-mini.webp"
 import baño from "../assets/images/baño.webp"
+import bañoMini from "../assets/images/baño-mini.webp"
 
 // Galería de imágenes de nuestras instalaciones
 const galleryImages = [
   {
     src: Salatulipan,
+    thumb: SalatulipanMini,
     title: "Sala Tulipán: Logopedia",
     description: "Así como cada tulipán necesita un espacio para crecer, cada persona necesita un lugar para comunicarse, expresarse y desarrollarse.",
   },
   {
     src: Salaarcoiris,
+    thumb: SalaarcoirisMini,
     title: "Sala Arco Iris: Pedagogía Terapéutica",
     description: "Como un arcoiris cada niño brilla con sus propios colores y la pedagogía terapéuta le ayuda a brillar en todo su esplendor.",
   },
   {
     src: Salamariposa,
+    thumb: SalamariposaMini,
     title: "Sala Mariposa: Psicología",
     description: "En sala mariposa creemos que cada proceso es como una metamorfosis: íntimo y lleno de posibilidades. Ofrecemos un lugar seguro en el que poder desplegar sus alas.",
   },
   {
     src: Salauniverso,
+    thumb: SalauniversoMini,
     title: "Sala Universo",
     description: "Donde la imaginación se expande, el juego se convierte en descubrimiento y cada momento es una nueva constelación en su propio cielo. Un lugar pensado para el juego, el movimiento, la comunicación, el aprendizaje, las emociones y la regulación sensorial.",
   },
   {
     src: recepcion,
+    thumb: recepcionMini,
     title: "Recepción",
     description: "Os damos la bienvenida en una recepción pensada para que el primer paso hacia el bienestar sea agradable y sereno. Con luz suave, colores armónicos y un ambiente relajante, diseñada para que puedas desconectar y prepararte para la sesión.",
   },
   {
     src: baño,
+    thumb: bañoMini,
     title: "Baño",   
     description: "Contamos con un baño unisex adaptado para personas con movilidad reducida, diseñado para ofrecer comodidad, seguridad y accesibilidad a todos nuestros visitantes.",
   }
@@ -92,7 +104,7 @@ export default function Spaces() {
                 }`}
               >
                 <img
-                  src={image.src}
+                  src={image.thumb}
                   alt={image.title}
                   loading={index < 2 ? "eager" : "lazy"}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
