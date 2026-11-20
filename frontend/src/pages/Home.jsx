@@ -2,6 +2,7 @@ import { Link } from "react-router"
 import HeroVideo from "../components/HeroVideo"
 import Reveal from "../components/Reveal"
 import Seo from "../components/Seo"
+import FraseEscrita from "../components/FraseEscrita"
 import card_tulipan from "../assets/images/card-tulipan.webp"
 import card_arcoiris from "../assets/images/card-arcoiris.webp"
 import card_mariposa from "../assets/images/card-mariposa.webp"
@@ -148,12 +149,11 @@ export default function Home() {
 
       {/* Cierre */}
       <section className="bg-white py-14 md:py-20">
-        <Reveal className="container mx-auto max-w-3xl px-4 text-center">
-          <p className="text-balance font-serif text-3xl leading-snug text-gray-900 md:text-4xl">Nos inspiramos en la pedagogía del amor.</p>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-gray-600">
-            Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada.
-          </p>
-        </Reveal>
+        <FraseEscrita
+          className="container mx-auto max-w-3xl px-4 text-center"
+          titulo="Nos inspiramos en la pedagogía del amor."
+          texto="Acompañamos a cada niño, niña y familia desde una mirada comprensiva, afectiva y personalizada."
+        />
       </section>
     </>
   )
