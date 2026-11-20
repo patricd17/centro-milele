@@ -1,14 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { Send, MessageCircle, PenLine, CheckCircle, AlertCircle } from "lucide-react"
+import { Send, MessageCircle, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
 import MapConsent from "../components/MapConsent"
 import DondeEstamos from "../components/DondeEstamos"
 import Seo from "../components/Seo"
 import PageHeader from "../components/PageHeader"
 import Faq from "../components/Faq"
-import WhatsAppIcon from "../components/icons/WhatsAppIcon"
-import { whatsappLink } from "../lib/whatsapp"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,27 +54,10 @@ export default function Contact() {
         title="Contacto y cómo llegar · Milele Centro Multidisciplinar, Málaga"
         description="Pide cita en Milele: calle Lope de Rueda 78 A, Puerto de la Torre (Málaga). Tardes de 16:00 a 20:00 y mañanas con cita previa. Tel. 614 438 477."
       />
-      <PageHeader title="Contacto">Elige cómo prefieres hablar con nosotras. Las mañanas son solo con cita previa.</PageHeader>
+      <PageHeader title="Contacto">Escríbenos o llámanos. Las mañanas son solo con cita previa.</PageHeader>
 
       <section className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-10 flex max-w-6xl flex-col gap-3 sm:flex-row md:mb-14">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98] md:hidden"
-            >
-              <WhatsAppIcon className="h-5 w-5" /> Escribir por WhatsApp
-            </a>
-            <a
-              href="#formulario"
-              className="inline-flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
-            >
-              <PenLine className="h-5 w-5" aria-hidden="true" /> Escribir un mensaje
-            </a>
-          </div>
-
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-12">
             {/* Dónde estamos: dirección, horario, teléfono y correo en un único bloque */}
             <DondeEstamos variant="card" photo="frontal" className="order-2 lg:order-1" />
