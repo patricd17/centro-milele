@@ -78,7 +78,7 @@ function LoginForm() {
         <button
           type="submit"
           disabled={busy}
-          className="w-full rounded-full bg-milele-gradient px-6 py-3 text-sm font-medium text-black shadow transition-shadow hover:shadow-md disabled:opacity-60 cursor-pointer"
+          className="w-full cursor-pointer rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800 disabled:opacity-60"
         >
           {busy ? "Entrando…" : "Entrar"}
         </button>

@@ -70,7 +70,7 @@ export default function PoliticaCookies() {
         <button
           type="button"
           onClick={openSettings}
-          className="rounded-xl bg-milele-gradient px-5 py-2.5 text-sm font-medium text-black shadow hover:shadow-lg transition-shadow cursor-pointer"
+          className="inline-flex min-h-11 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-6 py-2.5 text-sm font-semibold text-gray-900 no-underline transition-all hover:bg-milele-lilac-dark active:scale-[0.98]"
         >
           Configurar cookies
         </button>
