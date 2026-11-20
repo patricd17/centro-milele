@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { Send, MessageCircle, Phone, PenLine, CheckCircle, AlertCircle } from "lucide-react"
+import { Send, MessageCircle, PenLine, CheckCircle, AlertCircle } from "lucide-react"
 import { contactAPI } from "../lib/api"
 import MapConsent from "../components/MapConsent"
 import DondeEstamos from "../components/DondeEstamos"
@@ -60,24 +60,18 @@ export default function Contact() {
 
       <section className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-10 grid max-w-6xl gap-3 md:mb-14 md:grid-cols-2">
-            <a
-              href="tel:+34614438477"
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
-            >
-              <Phone className="h-5 w-5" aria-hidden="true" /> Llamar · 614 438 477
-            </a>
+          <div className="mx-auto mb-10 flex max-w-6xl flex-col gap-3 sm:flex-row md:mb-14">
             <a
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98] md:hidden"
+              className="inline-flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98] md:hidden"
             >
               <WhatsAppIcon className="h-5 w-5" /> Escribir por WhatsApp
             </a>
             <a
               href="#formulario"
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
+              className="inline-flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
             >
               <PenLine className="h-5 w-5" aria-hidden="true" /> Escribir un mensaje
             </a>

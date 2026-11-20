@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Spaces from './pages/Spaces'
 import Contact from './pages/Contact'
 import About from './pages/About'
-import StatusBar from './components/layout/StatusBar'
 import BackToTop from './components/layout/BackToTop'
 import WhatsAppButton from './components/layout/WhatsAppButton'
 import NavBar from './components/layout/NavBar'
@@ -45,10 +44,7 @@ function Shell() {
     <>
       <ScrollToTop />
       {!isAdmin && (
-        <>
-          <StatusBar />
-          <NavBar />
-        </>
+        <NavBar />
       )}
       <Routes>
         <Route path="/" element={<Home />} />

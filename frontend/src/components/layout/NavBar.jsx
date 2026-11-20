@@ -7,6 +7,7 @@ import WhatsAppIcon from "../icons/WhatsAppIcon"
 import { whatsappLink } from "../../lib/whatsapp"
 import { getOpeningStatus } from "../../lib/openingHours"
 import { useClosures } from "../../context/closuresContext"
+import StatusBar from "./StatusBar"
 
 // El logo lleva al inicio; si ya estás en el inicio, sube arriba del todo.
 function alPulsarLogo(pathname) {
@@ -139,6 +140,21 @@ export default function Navbar() {
   const { pathname } = useLocation()
   const menuButton = useRef(null)
   const wasOpen = useRef(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { closures } = useClosures()
+  const status = getOpeningStatus(new Date(), closures)
+
+  // Al bajar, la cabecera se hace compacta y se queda fija. Dos umbrales distintos evitan parpadeos
+  // al cruzar el límite, porque al encogerse cambia la altura de la página.
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled((prev) => (prev ? y > 10 : y > 80))
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   const isActive = (path) => (path === "/" ? pathname === "/" : pathname.startsWith(path))
   const close = () => setOpen(false)
@@ -164,12 +180,17 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-milele-green/20 bg-white/95 shadow-sm backdrop-blur-sm">
-      <div className="container mx-auto flex h-28 items-center justify-between px-4">
+      {/* La barra de horario y teléfono va fija con el menú. En el móvil se oculta al bajar y su
+          teléfono pasa al botón «Llamar» de la cabecera compacta. */}
+      <div className={scrolled ? "hidden md:block" : ""}>
+        <StatusBar />
+      </div>
+      <div className={`container mx-auto flex items-center justify-between px-4 transition-[height] duration-200 ${scrolled ? "h-16" : "h-28"}`}>
         <Link to="/" onClick={alPulsarLogo(pathname)} className="group flex items-center">
           <img
             src={logoMilele}
             alt="Milele Centro Multidisciplinar"
-            className="w-20 transition-transform duration-300 group-hover:scale-105 md:w-24"
+            className={`transition-all duration-200 group-hover:scale-105 ${scrolled ? "w-11" : "w-20 md:w-24"}`}
           />
         </Link>
 
@@ -198,17 +219,30 @@ export default function Navbar() {
         </nav>
 
         {/* Móvil */}
-        <button
-          ref={menuButton}
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menú"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark cursor-pointer md:hidden"
-        >
-          <Menu className="h-7 w-7" aria-hidden="true" />
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          {scrolled && (
+            <a
+              href="tel:+34614438477"
+              aria-label={`Llamar al 614 438 477. ${status.label}`}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-3.5 text-sm font-semibold ring-1 ring-gray-200 transition-colors hover:ring-milele-cyan-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark"
+            >
+              <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${status.state === "open" ? "bg-green-500" : "bg-red-500"}`} />
+              <Phone className="h-4 w-4 text-milele-cyan-dark" aria-hidden="true" />
+              Llamar
+            </a>
+          )}
+          <button
+            ref={menuButton}
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menú"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-milele-cyan-dark cursor-pointer md:hidden"
+          >
+            <Menu className="h-7 w-7" aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
       <MobileMenu open={open} onClose={close} isActive={isActive} />

@@ -127,18 +127,6 @@ export default function Spaces() {
         </div>
       </section>
 
-      <section className="bg-[#f4fbf3] py-12 text-center md:py-16">
-        <div className="container mx-auto px-4">
-          <p className="font-serif text-2xl text-gray-900 md:text-3xl">¿Quieres verlo en persona?</p>
-          <Link
-            to="/contact#formulario"
-            className="mt-6 inline-flex items-center justify-center rounded-full border-[1.5px] border-gray-900 bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-gray-800 active:scale-[0.98]"
-          >
-            Pedir cita
-          </Link>
-        </div>
-      </section>
-
       <ImageModal
         isOpen={selectedImage !== null}
         onClose={closeModal}
