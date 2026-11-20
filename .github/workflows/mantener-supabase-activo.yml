@@ -7,7 +7,10 @@ name: Mantener Supabase activo
 # GitHub desactiva los avisos programados de un repositorio público si pasan
 # 60 días sin actividad (commits, PR, etc.), y con ellos dejaría de llegar el
 # aviso a Supabase. Por eso, en cada ejecución, el propio aviso se vuelve a
-# activar a sí mismo, lo que reinicia ese plazo de 60 días.
+# activar a sí mismo, lo que reinicia ese plazo de 60 días. Además, el día 1 de
+# cada mes (o al lanzarlo a mano) sube un pequeño registro a la rama "latido",
+# para que el repositorio siempre tenga actividad reciente. Esa rama no afecta
+# a la web publicada.
 on:
   schedule:
     - cron: "17 6 */2 * *"
@@ -18,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
+      contents: write
     steps:
       - name: Consultar la base de datos
         run: |
@@ -31,3 +35,25 @@ jobs:
         run: |
           gh api -X PUT \
             "repos/${{ github.repository }}/actions/workflows/mantener-supabase-activo.yml/enable"
+
+      - name: Subir registro de actividad a la rama latido
+        run: |
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ] && [ "$(date -u +%d)" != "01" ]; then
+            echo "Hoy no toca registro mensual."
+            exit 0
+          fi
+          git clone --quiet "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" repo
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin latido >/dev/null 2>&1; then
+            git fetch --quiet origin latido
+            git checkout --quiet -B latido origin/latido
+          else
+            git checkout --quiet --orphan latido
+            git rm -rfq . || true
+          fi
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > latido.txt
+          git add latido.txt
+          git commit --quiet -m "Registro de actividad mensual"
+          git push --quiet origin latido
