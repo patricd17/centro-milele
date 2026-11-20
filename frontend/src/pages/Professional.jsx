@@ -2,6 +2,7 @@ import { Link, useParams, Navigate } from "react-router"
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react"
 import { getProfessional } from "../data/professionals"
 import Reveal from "../components/Reveal"
+import Seo from "../components/Seo"
 
 const botonLila =
   "inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-7 py-3.5 text-base font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98]"
@@ -22,6 +23,10 @@ export default function Professional() {
 
   return (
     <>
+      <Seo
+        title={`${p.name}, ${p.role.toLowerCase()} · Milele, Málaga`}
+        description={`${p.name}, ${p.role.toLowerCase()} (colegiada nº ${p.license}) en Milele, Puerto de la Torre (Málaga). Especialidades: ${p.specialties.slice(0, 4).join(", ")}.`}
+      />
       <section className="bg-white py-10 md:py-16">
         <div className="container mx-auto px-4">
           <Link
