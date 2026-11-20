@@ -128,6 +128,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* La cabecera fija cambia de altura al bajar; sin esto el navegador "corrige" el scroll y, al pulsar el logo,
+   la página se quedaba a unos píxeles del principio. */
+html {
+  overflow-anchor: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
