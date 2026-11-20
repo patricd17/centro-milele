@@ -11,7 +11,7 @@ export default function MapConsent({ className = "h-64" }) {
 
   return (
     <div
-      className={`w-full overflow-hidden rounded-lg bg-gradient-to-br from-milele-green-light to-milele-cyan-light border border-milele-green/20 ${className}`}
+      className={`w-full overflow-hidden rounded-xl bg-[#f4fbf3] border border-gray-200 ${className}`}
     >
       {thirdPartyAllowed ? (
         <iframe
@@ -36,7 +36,7 @@ export default function MapConsent({ className = "h-64" }) {
             <button
               type="button"
               onClick={acceptAll}
-              className="mt-4 rounded-full bg-milele-gradient px-5 py-2 text-sm font-medium text-black shadow hover:shadow-md transition-shadow cursor-pointer"
+              className="mt-4 rounded-full border-[1.5px] border-milele-lilac-line bg-milele-lilac px-5 py-2.5 text-sm font-semibold text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-milele-lilac-dark active:scale-[0.98] cursor-pointer"
             >
               Ver mapa aquí
             </button>

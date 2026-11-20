@@ -6,6 +6,7 @@ import MapConsent from "../components/MapConsent"
 import DondeEstamos from "../components/DondeEstamos"
 import Seo from "../components/Seo"
 import PageHeader from "../components/PageHeader"
+import Faq from "../components/Faq"
 import WhatsAppIcon from "../components/icons/WhatsAppIcon"
 import { whatsappLink } from "../lib/whatsapp"
 
@@ -235,8 +236,15 @@ export default function Contact() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <Faq />
+
+      <section className="bg-white pb-14 md:pb-20">
+        <div className="container mx-auto px-4">
           {/* Mapa (se carga solo al pulsar «Ver mapa aquí») */}
-          <div className="mx-auto mt-12 max-w-6xl rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+          <div className="mx-auto max-w-6xl rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-semibold font-serif text-gray-900">Encuéntranos en el mapa</h2>
             <MapConsent className="h-80" />
           </div>
