@@ -3,6 +3,11 @@ name: Mantener Supabase activo
 # Supabase pausa los proyectos gratuitos tras una semana sin actividad.
 # Este aviso consulta la base de datos cada dos días para que no se pause.
 # La URL y la clave son las públicas de la web (ya viajan en el JavaScript).
+#
+# GitHub desactiva los avisos programados de un repositorio público si pasan
+# 60 días sin actividad (commits, PR, etc.), y con ellos dejaría de llegar el
+# aviso a Supabase. Por eso, en cada ejecución, el propio aviso se vuelve a
+# activar a sí mismo, lo que reinicia ese plazo de 60 días.
 on:
   schedule:
     - cron: "17 6 */2 * *"
@@ -11,9 +16,18 @@ on:
 jobs:
   ping:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     steps:
       - name: Consultar la base de datos
         run: |
           curl -fsS --retry 3 --retry-delay 5 \
             "https://zoopdygqskchmoppabiq.supabase.co/rest/v1/closures?select=id&limit=1" \
             -H "apikey: sb_publishable_JN_kxHd_sRmIKUzhuFPwzg_UDq-mLnY"
+
+      - name: Mantener activo este aviso
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X PUT \
+            "repos/${{ github.repository }}/actions/workflows/mantener-supabase-activo.yml/enable"
