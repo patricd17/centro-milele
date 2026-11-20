@@ -154,8 +154,9 @@ export default function Contact() {
                 </div>
 
                 <p className="-mt-3 text-xs text-gray-500">
-                  Por favor, no incluyas datos de salud ni informes en este mensaje: te los pediremos de forma segura
-                  al concertar la cita. Si escribes en nombre de un menor, hazlo como madre, padre o tutor.
+                  Por favor, no incluyas datos de salud ni informes en este mensaje. Te los solicitaremos de forma
+                  segura cuando concertemos la cita. Si estás escribiendo en nombre de un menor de edad, hazlo como
+                  madre, padre o tutor legal.
                 </p>
 
                 {/* Campo trampa: oculto para las personas */}
