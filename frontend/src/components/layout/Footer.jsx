@@ -10,20 +10,18 @@ export default function Footer() {
   const isHome = pathname === "/"
 
   return (
-    <footer className="bg-milele-gradient-soft pt-12 relative overflow-hidden">
-      <div className="absolute inset-0 bg-milele-gradient opacity-5"></div>
-      <div className="container mx-auto px-4 relative">
-        {isHome && <DondeEstamos compact />}
-
-        <div className={`border-t border-milele-green/20 pb-44 pt-6 text-center text-sm text-gray-600 md:pb-6 ${isHome ? "mt-8" : ""}`}>
+    <footer className="bg-white">
+      {isHome && <DondeEstamos compact />}
+      <div className="container mx-auto px-4">
+        <div className="border-t border-gray-200 pb-44 pt-6 text-center text-sm text-gray-600 md:pb-6">
           <nav className="mb-2 flex flex-wrap justify-center gap-x-4">
-            <Link to="/aviso-legal" className="inline-block py-2 hover:text-milele-pink-dark transition-colors">Aviso legal</Link>
-            <Link to="/politica-de-privacidad" className="inline-block py-2 hover:text-milele-pink-dark transition-colors">Política de privacidad</Link>
-            <Link to="/politica-de-cookies" className="inline-block py-2 hover:text-milele-pink-dark transition-colors">Política de cookies</Link>
-            <button type="button" onClick={openSettings} className="inline-block py-2 hover:text-milele-pink-dark transition-colors cursor-pointer">
+            <Link to="/aviso-legal" className="inline-block py-2 hover:text-gray-900 underline-offset-4 hover:underline transition-colors">Aviso legal</Link>
+            <Link to="/politica-de-privacidad" className="inline-block py-2 hover:text-gray-900 underline-offset-4 hover:underline transition-colors">Política de privacidad</Link>
+            <Link to="/politica-de-cookies" className="inline-block py-2 hover:text-gray-900 underline-offset-4 hover:underline transition-colors">Política de cookies</Link>
+            <button type="button" onClick={openSettings} className="inline-block py-2 hover:text-gray-900 underline-offset-4 hover:underline transition-colors cursor-pointer">
               Configurar cookies
             </button>
-            <Link to="/admin" className="inline-block py-2 hover:text-milele-pink-dark transition-colors">Acceso del equipo</Link>
+            <Link to="/admin" className="inline-block py-2 hover:text-gray-900 underline-offset-4 hover:underline transition-colors">Acceso del equipo</Link>
           </nav>
           <p>© {new Date().getFullYear()} Milele Málaga S.L. Todos los derechos reservados.</p>
         </div>
