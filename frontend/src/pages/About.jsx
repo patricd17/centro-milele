@@ -32,7 +32,7 @@ export default function About() {
         <div className="container mx-auto grid gap-8 px-4 md:grid-cols-[1.1fr_1fr] md:items-end md:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">Quiénes somos</p>
-            <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-gray-900 md:text-6xl">{titular}</h1>
+            <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-gray-900 md:text-5xl">{titular}</h1>
           </div>
           <p className="text-lg leading-relaxed text-gray-700">
             Nos inspiramos en la pedagogía del amor: acompañamos a cada niño, niña y familia desde una mirada

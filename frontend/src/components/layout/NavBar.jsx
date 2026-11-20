@@ -180,12 +180,12 @@ export default function Navbar() {
       {/* La barra de horario y teléfono va fija con el menú. En el móvil la cabecera se queda igual al bajar;
           en el ordenador se hace compacta (el logo se reduce). */}
       <StatusBar />
-      <div className={`container mx-auto flex items-center justify-between px-4 transition-[height] duration-200 ${scrolled ? "h-28 md:h-16" : "h-28"}`}>
+      <div className={`container mx-auto flex items-center justify-between px-4 transition-[height] duration-200 ${scrolled ? "h-20 md:h-14" : "h-20"}`}>
         <Link to="/" onClick={alPulsarLogo(pathname)} className="group flex items-center">
           <img
             src={logoMilele}
             alt="Milele Centro Multidisciplinar"
-            className={`transition-all duration-200 group-hover:scale-105 ${scrolled ? "w-20 md:w-11" : "w-20 md:w-24"}`}
+            className={`transition-all duration-200 group-hover:scale-105 ${scrolled ? "w-14 md:w-10" : "w-14 md:w-16"}`}
           />
         </Link>
 

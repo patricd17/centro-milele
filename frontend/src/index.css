@@ -134,6 +134,11 @@ html {
   overflow-anchor: none;
 }
 
+/* En ordenador, todo el contenido comparte el mismo ancho máximo, así cabecera y secciones quedan alineadas. */
+.container {
+  max-width: 75rem;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
