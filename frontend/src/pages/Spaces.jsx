@@ -1,4 +1,3 @@
-import { Link } from "react-router"
 import { useState } from "react"
 import Seo from "../components/Seo"
 import PageHeader from "../components/PageHeader"
@@ -117,7 +116,7 @@ export default function Spaces() {
           </div>
           <p className="mx-auto mt-3 max-w-6xl text-sm text-gray-500">Pulsa una foto para verla en grande.</p>
 
-          <div className="mx-auto mt-12 grid max-w-6xl gap-8 md:grid-cols-3 md:gap-10">
+          <div className="mx-auto mt-12 grid max-w-6xl gap-8 md:grid-cols-2 md:gap-10">
             <div className="border-t-2 border-gray-900 pt-4">
               <h2 className="font-serif text-xl font-semibold text-gray-900">Salas individuales</h2>
               <p className="mt-2 leading-relaxed text-gray-700">Una sala por área, con el material adaptado a cada edad.</p>
@@ -125,15 +124,6 @@ export default function Spaces() {
             <div className="border-t-2 border-gray-900 pt-4">
               <h2 className="font-serif text-xl font-semibold text-gray-900">Accesible</h2>
               <p className="mt-2 leading-relaxed text-gray-700">Baño adaptado para personas con movilidad reducida.</p>
-            </div>
-            <div className="border-t-2 border-gray-900 pt-4">
-              <h2 className="font-serif text-xl font-semibold text-gray-900">En Puerto de la Torre</h2>
-              <p className="mt-2 leading-relaxed text-gray-700">
-                Calle Lope de Rueda, 78 A.{" "}
-                <Link to="/contact" className="font-medium text-gray-900 underline underline-offset-4">
-                  Cómo llegar
-                </Link>
-              </p>
             </div>
           </div>
         </div>

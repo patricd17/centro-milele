@@ -1,7 +1,5 @@
 import { Link } from "react-router"
 import { ArrowRight, Navigation } from "lucide-react"
-import { getOpeningStatus } from "../lib/openingHours"
-import { useClosures } from "../context/closuresContext"
 import fachadaEsquina from "../assets/images/fachada-milele.webp"
 import fachadaFrontal from "../assets/images/fachada-frontal.webp"
 import instagramLogo from "../assets/images/instagram.webp"
@@ -29,8 +27,6 @@ const MAPS_ROUTE = "https://www.google.com/maps/dir/?api=1&destination=Calle+Lop
  */
 export default function DondeEstamos({ compact = false, variant = "plain", photo = "esquina", className = "" }) {
   const image = PHOTOS[photo]
-  const { closures } = useClosures()
-  const status = getOpeningStatus(new Date(), closures)
 
   if (compact) {
     return (
@@ -44,12 +40,7 @@ export default function DondeEstamos({ compact = false, variant = "plain", photo
           className="h-72 w-full object-cover object-[30%_35%] lg:h-full lg:min-h-[26rem]"
         />
         <div className="flex flex-col justify-center bg-[#f4fbf3] px-6 py-10 md:px-12 md:py-14">
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[#d9e8d6] bg-white px-3.5 py-1.5 text-[13px] font-medium text-gray-800">
-            <span className={`h-2 w-2 rounded-full ${status.state === "open" ? "bg-green-500" : "bg-red-500"}`} aria-hidden="true" />
-            {status.label}
-            {status.detail && <span className="text-gray-500"> · {status.detail}</span>}
-          </p>
-          <h2 id="donde-titulo" className="mt-5 font-serif text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+          <h2 id="donde-titulo" className="font-serif text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
             Estamos en Puerto de la Torre
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-gray-700">
