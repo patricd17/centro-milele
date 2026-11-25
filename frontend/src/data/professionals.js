@@ -70,7 +70,7 @@ export const professionals = [
     license: "AO11742",
     photoCard: silviaCard,
     photoProfile: silviaPerfil,
-    quote: "Acompañar a las familias en cada uno de los progresos de los peques.",
+    quote: "La terapia es una de las formas más bonitas de acompañar a las personas en sus momentos más vulnerables.",
     summary:
       "Psicóloga especializada en Atención Temprana y en Trastorno del Espectro Autista. Acompaño a los niños y a sus familias en cada paso.",
     specialties: [
