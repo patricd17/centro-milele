@@ -47,7 +47,7 @@ export default function Home() {
     <>
       <Seo
         title="Milele · Logopedia, pedagogía y psicología en Puerto de la Torre, Málaga"
-        description="Centro multidisciplinar en Puerto de la Torre (Málaga): logopedia, pedagogía terapéutica y psicología. Equipo de tres profesionales colegiadas. Pide cita."
+        description="Centro multidisciplinar en Puerto de la Torre (Málaga): logopedia, pedagogía terapéutica y psicología. Equipo de cinco profesionales colegiadas. Pide cita."
       />
       {/* Portada */}
       <section className="relative overflow-hidden bg-[#f4fbf3] py-8 md:py-14">

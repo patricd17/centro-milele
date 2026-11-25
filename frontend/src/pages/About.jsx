@@ -61,9 +61,9 @@ export default function About() {
             </div>
           )}
 
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 lg:[&>*:nth-child(3n+2)]:mt-14">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-12 lg:[&>*:nth-child(3n+2)]:mt-14">
             {visibles.map((p, i) => (
-              <Reveal key={p.id} delay={(i % 3) * 80}>
+              <Reveal key={p.id} delay={(i % 3) * 80} className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.7rem)]">
                 <Link to={`/about/${p.id}`} className="group block">
                   <img
                     src={p.photoCard}
@@ -73,7 +73,7 @@ export default function About() {
                   />
                   <h2 className="mt-5 font-serif text-2xl font-semibold text-gray-900">{p.name}</h2>
                   <p className="mt-1 text-sm text-gray-600">
-                    {p.role} · Colegiada {p.license}
+                    {p.role}{p.license ? ` · Colegiada ${p.license}` : ""}
                   </p>
                   <p className="mt-3 font-serif text-[17px] italic leading-relaxed text-gray-700">«{p.quote}»</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 border-b-[1.5px] border-gray-900 pb-0.5 text-sm font-semibold text-gray-900">
