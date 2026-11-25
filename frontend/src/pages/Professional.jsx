@@ -25,7 +25,7 @@ export default function Professional() {
     <>
       <Seo
         title={`${p.name}, ${p.role.toLowerCase()} · Milele, Málaga`}
-        description={`${p.name}, ${p.role.toLowerCase()} (colegiada nº ${p.license}) en Milele, Puerto de la Torre (Málaga). Especialidades: ${p.specialties.slice(0, 4).join(", ")}.`}
+        description={`${p.name}, ${p.role.toLowerCase()}${p.license ? ` (colegiada nº ${p.license})` : ""} en Milele, Puerto de la Torre (Málaga). Especialidades: ${p.specialties.slice(0, 4).join(", ")}.`}
       />
       <section className="bg-white py-10 md:py-16">
         <div className="container mx-auto px-4">
@@ -46,7 +46,7 @@ export default function Professional() {
             <div>
               <h1 className="font-serif text-4xl font-bold text-gray-900 md:text-5xl">{p.name}</h1>
               <p className="mt-2 text-lg text-gray-600">
-                {p.role} · Colegiada nº {p.license}
+                {p.role}{p.license ? ` · Colegiada nº ${p.license}` : ""}
               </p>
               <p className="mt-6 text-lg leading-relaxed text-gray-700">{p.summary}</p>
 

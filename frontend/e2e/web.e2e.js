@@ -15,6 +15,8 @@ const PAGINAS = [
   { ruta: '/', titulo: /Milele/, h1: /Para siempre/ },
   { ruta: '/about', titulo: /Quiénes somos/, h1: /mismo equipo/ },
   { ruta: '/about/silvia', titulo: /Silvia/, h1: /Silvia Cabello/ },
+  { ruta: '/about/miriam', titulo: /Miriam/, h1: /Miriam Ramírez/ },
+  { ruta: '/about/andrea', titulo: /Andrea/, h1: /Andrea Acacio/ },
   { ruta: '/spaces', titulo: /Nuestros espacios/, h1: /Nuestros espacios/ },
   { ruta: '/contact', titulo: /Contacto/, h1: /Contacto/ },
   { ruta: '/aviso-legal', titulo: /Aviso legal/, h1: /Aviso legal/ },
